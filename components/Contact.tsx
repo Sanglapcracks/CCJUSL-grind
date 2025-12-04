@@ -3,9 +3,9 @@ import React from "react";
 
 function Contact() {
   return (
-    <div className="absolute flex w-full flex-col items-center bg-black p-12 pb-0">
+    <div id="contact" className="absolute flex w-full flex-col items-center bg-black p-12 pb-0">
       <h1 className="text-5xl lg:text-8xl font-bold uppercase">Contact Us</h1>
-      <div className="grid w-full place-items-center sm:grid-cols-2">
+      <div className="grid w-full place-items-center sm:grid-cols-2 gap-8">
         <iframe
           style={{
             borderRadius: "4px",
@@ -29,9 +29,9 @@ function Contact() {
           <div className="flex flex-col gap-y-2">
             <h3 className="font-semibold uppercase text-xl text-gray-400">Socials</h3>
             <div className="flex justify-between font-medium uppercase">
-              <Link href={""}>Linkedin</Link>
-              <Link href={""}>Youtube</Link>
-              <Link href={""}>Instagram</Link>
+              <Link href={"https://www.linkedin.com/company/codeclub-jusl/"} target="_blank">Linkedin</Link>
+              <Link href={"https://youtube.com/@codeclubjusl"} target="_blank">Youtube</Link>
+              <Link href={"https://www.instagram.com/jusl_codeclub"} target="_blank">Instagram</Link>
             </div>
           </div>
         </div>

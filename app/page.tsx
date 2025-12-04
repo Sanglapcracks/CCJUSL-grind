@@ -7,7 +7,7 @@ import Events from "@/components/Events";
 
 function page() {
   return (
-    <div className="font-jetbrains-mono absolute w-full">
+    <div className="font-jetbrains-mono absolute w-full scroll-smooth">
       <div className="fixed top-0 z-10 flex h-screen flex-col items-center">
         <Navbar />
         <Hero />

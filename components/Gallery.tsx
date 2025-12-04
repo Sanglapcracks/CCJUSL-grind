@@ -14,36 +14,36 @@ const events: EventType[] = [
     id: 1,
     title: "HackForge",
     description: "Hackathon",
-    image: "/hackforge.jpg",
-    classes: "bg-red-400 rotate-6 left-5 2xl:left-[5%] top-0 lg:top-[25%]",
+    image: "/events/hackforge.jpg",
+    classes: "bg-red-400 rotate-6 left-5 sm:left-10 2xl:left-[5%] top-0 sm:top-[25%]",
   },
   {
     id: 2,
     title: "H42",
     description: "Competitive Programming",
     image: "/sample.png",
-    classes: "bg-blue-400 -rotate-6 left-[5%] lg:left-[25%] top-[20%] lg:top-[35%]",
+    classes: "bg-blue-400 -rotate-6 left-[5%] sm:left-[50%] lg:left-[25%] top-[20%] sm:top-[27%] lg:top-[35%] z-10 sm:z-0",
   },
   {
     id: 3,
     title: "Sherlocked",
     description: "CTF",
-    image: "/sample.png",
-    classes: "bg-red-400 rotate-6 left-[5%] lg:left-[45%] top-[40%] lg:top-[30%]",
+    image: "/events/sherlocked.png",
+    classes: "bg-red-400 rotate-6 sm:-rotate-6 lg:rotate-6 left-[5%] sm:left-14 lg:left-[47%] top-[40%] sm:top-[60%] lg:top-[30%]",
   },
   {
     id: 4,
     title: "Pass The Baton",
     description: "Competitive Programming",
     image: "/sample.png",
-    classes: "bg-blue-400 -rotate-6 left-[5%] lg:left-[70%] top-[60%] lg:top-[35%]",
+    classes: "bg-blue-400 -rotate-6 sm:rotate-6 lg:-rotate-6 left-[5%] sm:left-[47%] lg:left-[70%] top-[60%] sm:top-[60%] lg:top-[35%]",
   },
 ];
 
 function Card({ event }: { event: EventType }) {
   return (
     <div
-      className={`${event.classes} p-4 rounded-md flex flex-col gap-y-2 absolute uppercase text-black scale-75 lg:scale-90 2xl:scale-120`}
+      className={`${event.classes} p-4 rounded-md flex flex-col gap-y-2 absolute uppercase text-black scale-75 sm:scale-90 2xl:scale-120`}
     >
       <Image
         src={event.image}
@@ -64,7 +64,7 @@ function Card({ event }: { event: EventType }) {
 
 function Gallery() {
   return (
-    <div className="w-full min-h-[150vh] lg:min-h-screen bg-gradient-to-b from-transparent via-black to-black drop-shadow-2xl">
+    <div className="w-full min-h-[150vh] sm:min-h-screen bg-gradient-to-b from-transparent via-black to-black drop-shadow-2xl relative">
       {events.map((e) => (
         <Card event={e} key={e.id} />
       ))}
