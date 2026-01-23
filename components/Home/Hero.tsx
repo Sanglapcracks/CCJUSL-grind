@@ -7,7 +7,7 @@ function Hero() {
       <h1 className="text-center text-7xl sm:text-[11vw] mt-6 sm:mt-4 font-semibold">CodeClub JUSL</h1>
       <div className="flex h-fit w-11/12 items-center justify-between border-red-500 text-gray-300/90">
         <p className="p-3">[2018]</p>
-        <div className="h-[1px] w-full bg-gray-300/50"></div>
+        <div className="h-px w-full bg-gray-300/50"></div>
         <p className="p-3">[NOW]</p>
       </div>
       <div className="w-11/12 sm:px-4">

@@ -19,17 +19,18 @@ model User {
   email         String    @unique
   name          String
   password      String?
+  role          String    @default("USER")
   phone         String?
   college       String?
   year          String?
-  branch        String?
-  rollNo        String?
+  department    String?
   image         String?
-  emailVerified Boolean?  @default(false)
-  referralCode  String?
+  registrationComplete Boolean  @default(false)
   accounts      Account[]
   createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  teamIds       String[]  @db.ObjectId
+  teams         Team[]    @relation(fields: [teamIds], references: [id])
 
   @@map("user")
 }
@@ -52,4 +53,30 @@ model Account {
 
   @@unique([provider, providerAccountId])
   @@map("account")
+}
+
+model Team {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  eventSlug   String
+  event       Event    @relation(fields: [eventSlug], references: [slug], onDelete: Cascade)
+  memberIds   String[] @db.ObjectId
+  members     User[]   @relation(fields: [memberIds], references: [id])
+  leader      String   @db.ObjectId
+  joiningCode String   @unique
+  complete    Boolean  @default(false)
+
+  @@map("team")
+}
+
+model Event {
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  slug       String @unique
+  name       String
+  minMembers Int
+  maxMembers Int
+
+  teams Team[]
+
+  @@map("event")
 }

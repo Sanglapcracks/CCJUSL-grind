@@ -1,12 +1,40 @@
 type User = {
-    id: string | undefined;
+    id?: string;
     createdAt?: Date;
     updatedAt?: Date;
     name: string;
     email: string;
-    emailVerified: boolean | null;
+    registrationComplete: boolean;
     image: string | null;
-    password: string | null;
+    password?: string | null;
+    role?: string;
+    year?: string | null;
+    department?: string;
 }
 
-export {type User};
+type SessionUser = {
+    id: string;
+    name: string;
+    email: string;
+    image?: string | null;
+    role: string;
+}
+
+type Event = {
+    slug: string;
+    id: string;
+    name: string;
+    minMembers: number;
+    maxMembers: number;
+}
+
+type Team = {
+    id: string;
+    name: string;
+    joiningCode: string;
+    leader: string;
+    members: User[];
+    eventSlug: string;
+}
+
+export type {User, SessionUser, Event, Team};

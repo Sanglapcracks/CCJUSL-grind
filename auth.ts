@@ -1,9 +1,34 @@
-import NextAuth from "next-auth";
+import NextAuth, { DefaultSession } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
+import Google from "next-auth/providers/google";
 import { getUserByEmail, validateUser } from "@/services/AuthService";
+
+declare module "next-auth"{
+  interface User{
+    role: string;
+    registrationComplete: boolean;
+  }
+  interface Session{
+    user: {
+      id: string;
+      name: string;
+      email: string;
+      role: string;
+      registrationComplete: boolean;
+    } & DefaultSession["user"]
+  }
+  interface JWT{
+    token: {
+      id: string;
+      role: string;
+      registrationComplete: boolean;
+    }
+  }
+}
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [
+    Google,
     Credentials({
       async authorize(credentials) {
         const email = credentials.email as string;
@@ -22,6 +47,22 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       },
     }),
   ],
+  callbacks: {
+    jwt({ token, user }) {
+      if (user){
+        token.id = user.id;
+        token.role = user.role;
+        token.registrationComplete = user.registrationComplete;
+      }
+      return token
+    },
+    session({ session, token }){
+      session.user.id = token.id as string;
+      session.user.role = token.role as string;
+      session.user.registrationComplete = token.registrationComplete as boolean;
+      return session
+    },
+  },
   session: {
     strategy: "jwt",
   },

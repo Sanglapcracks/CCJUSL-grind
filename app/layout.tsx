@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import { Toaster } from "react-hot-toast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +34,27 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${jetbrainsMono.variable} antialiased`}
       >
+        <Navbar fromLayout={true} />
         {children}
+        <Toaster position="bottom-right" toastOptions={{style: {
+          backgroundColor: "#1c1c1c",
+          color: "white",
+          padding: "12px",
+          borderRadius: "6px",
+          minWidth: "300px",
+          textAlign: "left",
+          fontFamily: 'JetBrains Mono'
+        },
+      success: {
+        iconTheme: {
+          primary: '#48ab60',
+          secondary: 'white',
+        }
+      }}}
+        containerStyle={{
+          right: 30,
+          bottom: 20
+        }} />
       </body>
     </html>
   );
