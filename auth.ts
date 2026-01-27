@@ -7,6 +7,7 @@ declare module "next-auth"{
   interface User{
     role: string;
     registrationComplete: boolean;
+    verifiedEmail: boolean;
   }
   interface Session{
     user: {
@@ -15,6 +16,7 @@ declare module "next-auth"{
       email: string;
       role: string;
       registrationComplete: boolean;
+      verifiedEmail: boolean;
     } & DefaultSession["user"]
   }
   interface JWT{
@@ -22,6 +24,7 @@ declare module "next-auth"{
       id: string;
       role: string;
       registrationComplete: boolean;
+      verifiedEmail: boolean;
     }
   }
 }
@@ -53,6 +56,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         token.id = user.id;
         token.role = user.role;
         token.registrationComplete = user.registrationComplete;
+        token.verifiedEmail = user.verifiedEmail;
       }
       return token
     },
@@ -60,6 +64,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       session.user.id = token.id as string;
       session.user.role = token.role as string;
       session.user.registrationComplete = token.registrationComplete as boolean;
+      session.user.verifiedEmail = token.verifiedEmail as boolean;
       return session
     },
   },

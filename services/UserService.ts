@@ -23,4 +23,17 @@ const completeUserRegistration = async (data: RegistrationData, id: string) => {
     return {ok: true, message: "Registration completed"};
 }
 
-export {completeUserRegistration};
+const setVerificationCode = async (email: string, token: string) => {
+    const status = await prisma.user.update({where: {email}, data: {verificationToken: token}});
+    return {ok: true, message: "Token set"};
+}
+
+const matchVerificationCode = async (email: string, code: string) => {
+    const userToken = await prisma.user.findFirst({where: {email}, select: {verificationToken: true}});
+    const match =  userToken?.verificationToken === code;
+
+    if(match) await prisma.user.update({where: {email}, data: {verifiedEmail: true}});
+    return match;
+}
+
+export {completeUserRegistration, setVerificationCode, matchVerificationCode};

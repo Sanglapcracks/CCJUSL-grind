@@ -15,22 +15,25 @@ datasource db {
 }
 
 model User {
-  id            String    @id @default(auto()) @map("_id") @db.ObjectId
-  email         String    @unique
-  name          String
-  password      String?
-  role          String    @default("USER")
-  phone         String?
-  college       String?
-  year          String?
-  department    String?
-  image         String?
-  registrationComplete Boolean  @default(false)
-  accounts      Account[]
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
-  teamIds       String[]  @db.ObjectId
-  teams         Team[]    @relation(fields: [teamIds], references: [id])
+  id                   String    @id @default(auto()) @map("_id") @db.ObjectId
+  email                String    @unique
+  name                 String
+  password             String?
+  role                 String    @default("USER")
+  phone                String?
+  college              String?
+  year                 String?
+  department           String?
+  image                String?
+  registrationComplete Boolean   @default(false)
+  verifiedEmail        Boolean   @default(false)
+  verificationToken    String?
+  passwordResetToken   String?
+  accounts             Account[]
+  createdAt            DateTime  @default(now())
+  updatedAt            DateTime  @updatedAt
+  teamIds              String[]  @db.ObjectId
+  teams                Team[]    @relation(fields: [teamIds], references: [id])
 
   @@map("user")
 }

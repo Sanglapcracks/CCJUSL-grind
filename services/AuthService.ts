@@ -6,6 +6,9 @@ import {prisma} from "@/prisma/client";
 import { auth } from "@/auth";
 import { redirect } from "next/navigation";
 
+const HCAPTCHA_SITEKEY = process.env.NEXT_PUBLIC_HCAPTCHA_SITEKEY;
+const HCAPTCHA_SECRET = process.env.HCAPTCHA_SECRET;
+
 const getUserByEmail = async (email: string | null) => {
   if(!email) return null;
   const user = await prisma.user.findFirst({ where: { email } });
@@ -22,7 +25,25 @@ const validateUser = async (user: User | null, password: string) => {
     return true;
 };
 
-const signup = async (user: User) => {
+const signup = async (user: User, hCaptchaToken: string | null) => {
+  if(!hCaptchaToken) return {ok: false, message: "Captcha Verification Failed"};
+
+  const captchaBody = {
+    secret: HCAPTCHA_SECRET,
+    response: hCaptchaToken,
+    sitekey: HCAPTCHA_SITEKEY
+  };
+
+  const captchaResponse = await fetch("https://api.hcaptcha.com/siteverify", {
+    method: "POST",
+    headers: {
+      "Content-Type": "x-www-form-urlencoded"
+    },
+    body: JSON.stringify(captchaBody)
+  });
+
+  const captchaStatus = await captchaResponse.json();
+  if(!captchaStatus.success) return {ok:false, message: "Captcha Verification Failed"};
   if(!user.password) return {ok: false, message: "Password is required"};
   const existingUser = await getUserByEmail(user.email);
   if(existingUser) return {ok: false, message: "Email already in use"};

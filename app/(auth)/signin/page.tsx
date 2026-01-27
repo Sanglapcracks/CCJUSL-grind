@@ -84,6 +84,7 @@ function Page() {
         <p>Don&apos;t have an account?</p>
         <Link href={"/signup"} className="underline underline-offset-4">Sign Up</Link>
       </div>
+      <Link href={"/forgot-password"} className="underline underline-offset-4 text-sm">Forgot Password</Link>
     </div>
   );
 }

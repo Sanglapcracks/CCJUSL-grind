@@ -5,11 +5,12 @@ type User = {
     name: string;
     email: string;
     registrationComplete: boolean;
+    verifiedEmail: boolean;
     image: string | null;
     password?: string | null;
     role?: string;
     year?: string | null;
-    department?: string;
+    department?: string | null;
 }
 
 type SessionUser = {
@@ -18,6 +19,8 @@ type SessionUser = {
     email: string;
     image?: string | null;
     role: string;
+    verifiedEmail: boolean;
+    registrationComplete: boolean;
 }
 
 type Event = {

@@ -1,13 +1,15 @@
 import CompleteRegistration from "@/components/Dashboard/CompleteRegistration";
 import Dashboard from "@/components/Dashboard/Dashboard";
+import VerifyEmail from "@/components/Dashboard/VerifyEmail";
 import { checkAuthentication } from "@/services/AuthService";
 import React from "react";
 
 async function Page() {
   const user = await checkAuthentication();
 
-  if(user.registrationComplete) return <Dashboard />
-  return <CompleteRegistration id={user.id} />
+  if(!user.verifiedEmail) return <VerifyEmail email={user.email} />
+  if(!user.registrationComplete) return <CompleteRegistration id={user.id} />
+  return <Dashboard />
 }
 
 export default Page;
