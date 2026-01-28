@@ -3,7 +3,7 @@
 import { User } from "@/types";
 import bcrypt from "bcryptjs";
 import {prisma} from "@/prisma/client";
-import { auth } from "@/auth";
+import { auth, unstable_update } from "@/auth";
 import { redirect } from "next/navigation";
 
 const HCAPTCHA_SITEKEY = process.env.NEXT_PUBLIC_HCAPTCHA_SITEKEY;
@@ -73,4 +73,21 @@ const checkAdminAuthorization = async () => {
   return session.user;
 }
 
-export { getUserByEmail, validateUser, signup, checkAuthentication, checkAdminAuthorization };
+const checkRegistrationStatus = async (id: string | undefined) => {
+  if(!id) return {emailVerified: null, registrationComplete: false};
+  const user = await prisma.user.findFirst({where: {id}, select: {emailVerified: true, registrationComplete: true}});
+  if(!user) return {emailVerified: null, registrationComplete: false};
+  return user;
+}
+
+const updateVerification = async () => {
+  const res = await unstable_update({user: { emailVerified: new Date()}});
+  return res;
+}
+
+const updateRegistrationStatus = async () => {
+  const res = await unstable_update({user: { registrationComplete: true}});
+  return res;
+}
+
+export { getUserByEmail, validateUser, signup, checkAuthentication, checkAdminAuthorization, checkRegistrationStatus, updateVerification, updateRegistrationStatus };

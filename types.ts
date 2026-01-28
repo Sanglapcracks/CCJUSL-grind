@@ -6,7 +6,7 @@ type User = {
     email: string;
     registrationComplete: boolean;
     emailVerified: Date | null;
-    image: string | null;
+    image?: string | null;
     password?: string | null;
     role?: string;
     year?: string | null;

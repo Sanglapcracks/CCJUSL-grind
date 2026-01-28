@@ -83,3 +83,10 @@ model Event {
 
   @@map("event")
 }
+
+model ResetPasswordToken {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  token     String   @unique
+  user_id   String   @db.ObjectId
+  expiresAt DateTime
+}

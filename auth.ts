@@ -1,7 +1,7 @@
 import NextAuth, { DefaultSession } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import Google from "next-auth/providers/google";
-import { getUserByEmail, validateUser } from "@/services/AuthService";
+import { checkRegistrationStatus, getUserByEmail, validateUser } from "@/services/AuthService";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { prisma } from "@/prisma/client";
 import { Adapter } from "next-auth/adapters";
@@ -29,7 +29,7 @@ declare module "next-auth" {
   }
 }
 
-export const { handlers, signIn, signOut, auth } = NextAuth({
+export const { handlers, signIn, signOut, auth, unstable_update } = NextAuth({
   providers: [
     Google,
     Credentials({
@@ -51,12 +51,17 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     }),
   ],
   callbacks: {
-    jwt({ token, user }) {
+    async jwt({ token, user, trigger, session }) {
       if (user) {
         token.id = user.id;
         token.role = user.role;
         token.registrationComplete = user.registrationComplete;
-        token.emailVerified = !!user.emailVerified;
+        token.emailVerified = user.emailVerified;
+      }
+      if (trigger === "update" && session) {
+        const regStatus = await checkRegistrationStatus(token.id as string);
+        token.registrationComplete = regStatus.registrationComplete;
+        token.emailVerified = regStatus.emailVerified;
       }
       return token;
     },

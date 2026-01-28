@@ -1,21 +1,31 @@
 "use client";
 
-import { sendVerificationEmail } from "@/services/EmailService";
-import { matchVerificationCode } from "@/services/UserService";
+import { matchVerificationCode, verifyEmail } from "@/services/UserService";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import { User } from "@/types";
+import { updateVerification } from "@/services/AuthService";
 
-function VerifyEmail({ email }: { email: string }) {
+function VerifyEmail({ user }: { user: User }) {
+  const email = user.email;
   const [code, setCode] = useState("");
   const [codeSent, setCodeSent] = useState(false);
+  const router = useRouter();
 
   const handleSubmit = () => {
     matchVerificationCode(email, code)
-    .then(res => alert(res));
+    .then(res => {
+      if(res){
+        updateVerification()
+        .then(() => router.refresh())
+      }
+    });
   };
 
   const handleSendCode = () => {
     setCodeSent(true);
-    sendVerificationEmail(email);
+    verifyEmail(email)
+    .then(res => console.log(res));
   };
   return (
     <div className="font-jetbrains-mono flex flex-col items-center gap-8 p-12">
@@ -39,7 +49,6 @@ function VerifyEmail({ email }: { email: string }) {
       <button
         className="rounded-xs bg-white px-2 py-1 text-black transition-colors duration-300 hover:bg-white/90 active:bg-white/60"
         onClick={() => handleSubmit()}
-        disabled={codeSent}
       >
         Verify Code
       </button>

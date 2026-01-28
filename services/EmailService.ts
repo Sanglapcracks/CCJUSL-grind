@@ -23,11 +23,7 @@ const sendEmail = async (mailOptions: MailOptions) => {
   }
 };
 
-const sendVerificationEmail = async (email: string) => {
-  const code = new ShortUniqueId({length: 8}).rnd();
-
-  await setVerificationCode(email, code);
-
+const sendVerificationEmail = async (email: string, code: string) => {
   const mailOptions = {
     from: process.env.SMTP_USER,
     to: email,
@@ -59,9 +55,7 @@ const sendVerificationEmail = async (email: string) => {
   return result;
 };
 
-const sendPasswordResetEmail = async (email: string) => {
-  const code = new ShortUniqueId({length: 12}).rnd();
-
+const sendPasswordResetEmail = async (email: string, link: string) => {
   const mailOptions = {
     from: process.env.SMTP_USER,
     to: email,
@@ -70,14 +64,14 @@ const sendPasswordResetEmail = async (email: string) => {
         <h2 style="color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; margin-bottom: 30px;">Verify Email</h2>
         
         <p style="font-size: 16px; color: #333; line-height: 1.6;">
-          Please use the following code to verify your email.
+          Please visit the following page to reset your password.
         </p>
         
         <div style="background-color: #f8f9fa; border-left: 4px solid #003366; padding: 20px; margin: 30px 0;">
           <h3 style="margin-top: 0; color: #003366; font-size: 18px; margin-bottom: 15px;">Participant Details</h3>
           <table style="width: 100%; border-collapse: collapse;">
             <tr>
-              <td style="padding: 5px 0; color: #333;">${code}</td>
+              <td style="padding: 5px 0; color: #333;">${link}</td>
             </tr>
         </div>
         

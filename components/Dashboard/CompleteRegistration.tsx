@@ -1,6 +1,8 @@
 "use client";
 
+import { updateRegistrationStatus } from "@/services/AuthService";
 import { completeUserRegistration } from "@/services/UserService";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 
@@ -11,6 +13,7 @@ function CompleteRegistration({id}: {id: string}) {
     year: "",
     department: "",
   });
+  const router = useRouter();
 
   const handleChange = (field: string, value: string) => {
     setData((prev) => ({ ...prev, [field]: value }));
@@ -18,7 +21,14 @@ function CompleteRegistration({id}: {id: string}) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    completeUserRegistration(data, id).then(res => console.log(res));
+    completeUserRegistration(data, id).
+    then(res => {
+      console.log(res);
+      if(res.ok){
+        updateRegistrationStatus()
+        .then(() => router.refresh())
+      }
+    });
   };
 
   return (
