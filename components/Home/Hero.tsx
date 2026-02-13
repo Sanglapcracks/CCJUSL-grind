@@ -5,7 +5,7 @@ function Hero() {
   return (
     <div className="flex w-full flex-col items-center sm:justify-center gap-y-4 sm:gap-y-6 bg-black min-h-[80vh]">
       <h1 className="text-center text-7xl sm:text-[11vw] mt-6 sm:mt-4 font-semibold">CodeClub JUSL</h1>
-      <div className="flex h-fit w-11/12 items-center justify-between border-red-500 text-gray-300/90">
+      <div className="flex h-fit w-11/12 items-center justify-between border-red-500 text-red-400">
         <p className="p-3">[2018]</p>
         <div className="h-px w-full bg-gray-300/50"></div>
         <p className="p-3">[NOW]</p>

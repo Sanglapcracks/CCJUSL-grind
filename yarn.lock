@@ -2662,6 +2662,7 @@ __metadata:
     bcryptjs: "npm:^3.0.3"
     eslint: "npm:^9"
     eslint-config-next: "npm:15.5.2"
+    lucide-react: "npm:^0.564.0"
     next: "npm:^15.5.7"
     next-auth: "npm:^5.0.0-beta.30"
     nodemailer: "npm:^7.0.12"
@@ -4296,6 +4297,15 @@ __metadata:
   bin:
     loose-envify: cli.js
   checksum: 10c0/655d110220983c1a4b9c0c679a2e8016d4b67f6e9c7b5435ff5979ecdb20d0813f4dec0a08674fcbdd4846a3f07edbb50a36811fd37930b94aaa0d9daceb017e
+  languageName: node
+  linkType: hard
+
+"lucide-react@npm:^0.564.0":
+  version: 0.564.0
+  resolution: "lucide-react@npm:0.564.0"
+  peerDependencies:
+    react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
+  checksum: 10c0/b2f58ed64d98102ab49d78956200958afcd30a033f3e2c3fc47b4890317d6c41671592f4ca5840e6884d973e4b193c01e42a72fb39c62d5c080d7725b21dc249
   languageName: node
   linkType: hard
 

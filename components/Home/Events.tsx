@@ -1,39 +1,48 @@
+import Link from "next/link";
 import React from "react";
+
+const eventData = [
+  {
+    name: "H42",
+    slug: "h42",
+    type: "Competitive Programming"
+  },
+  {
+    name: "Hackforge",
+    slug: "hackforge",
+    type: "Hackathon"
+  },
+  {
+    name: "Pass the Baton",
+    slug: "ptb",
+    type: "Competitive Programming"
+  },
+  {
+    name: "Sherlocked",
+    slug: "sherlocked",
+    type: "Capture the Flag"
+  },
+  {
+    name: "Epochalypse",
+    slug: "epochalypse",
+    type: "Data Science"
+  },
+];
 
 function Events() {
   return (
     <div id="events" className="flex w-full flex-col items-center gap-y-20 bg-black py-8">
       <h1 className="text-6xl sm:text-8xl font-semibold">EVENTS</h1>
-      <ul className="flex w-5/6 flex-col gap-y-6 lg:w-4/5 2xl:w-3/5 2xl:gap-y-12">
-        <li className="flex flex-col gap-2">
-          <span className="text-xl font-semibold">H42</span>
-          <p>
-            A thrilling three-member team contest where you have the opportunity
-            to unleash your coding prowess in a battleground of algorithms.
-          </p>
+      <ul className="flex w-5/6 flex-col lg:w-4/5 2xl:w-3/5 border-b border-b-gray-400/50">
+      {eventData.map(event => (
+        <li key={event.slug} className="grid grid-cols-2 w-full items-center gap-6 border-t border-gray-400/50 p-4 transition-colors duration-300 hover:bg-gray-400/20">
+          <div className="flex flex-col gap-2">
+            <h3 className="text-2xl sm:text-3xl font-semibold">{event.name}</h3>
+            <p className="text-red-400">{event.type}</p>
+          </div>
+          <Link href={`/events/${event.slug}`} className="text-sm sm:text-base text-center justify-self-end px-5 py-2 border border-red-400/60">Learn More</Link>
         </li>
-        <li className="flex flex-col gap-2">
-          <span className="text-xl font-semibold">Pass The Baton</span>
-          <p>
-            A relay problem-solving contest where collaboration is the key.
-            Think of it as the relay race of the coding world, where
-            participants taken turns solving the same problems.
-          </p>
-        </li>
-        <li className="flex flex-col gap-2">
-          <span className="text-xl font-semibold">Sherlocked</span>
-          <p>
-            Unlock the power of your creativity! This challenge demands your sharp observation, imaginative flair, and lightning-fast reasoning skills. It&apos;s a mix of coding challenges, brain teasers, and the excitement of a capture-the-flag competition.
-          </p>
-        </li>
-        <li className="flex flex-col gap-2">
-          <span className="text-xl font-semibold">
-            Hackforge - Forging the Future
-          </span>
-          <p>
-            Embark on a high-energy 12 hour team hackathon that holds the power to make a real impact on society. Experience the excitement of brainstorming, prototyping and pitching your projects to a panel of esteemed judges.
-          </p>
-        </li>
+      ))}
       </ul>
     </div>
   );

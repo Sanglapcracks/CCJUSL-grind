@@ -19,15 +19,15 @@ function Contact() {
 
         <div className="flex w-full lg:w-1/2 flex-col gap-y-4 lg:gap-y-12 mb-4">
           <div className="flex flex-col gap-y-1">
-            <h3 className="font-semibold uppercase text-xl text-gray-400">Address</h3>
+            <h3 className="font-semibold uppercase text-xl text-red-400">Address</h3>
             <p className="font-medium">Plot No.8, B-73-80, Salt Lake Bypass, LB Block, Sector 3, Bidhannagar, Kolkata, West Bengal 700106</p>
           </div>
           <div className="flex flex-col gap-y-1">
-            <h3 className="font-semibold uppercase text-xl text-gray-400">Email</h3>
+            <h3 className="font-semibold uppercase text-xl text-red-400">Email</h3>
             <Link href={"mailto:codeclubjusl@gmail.com"} className="font-medium">codeclubjusl@gmail.com</Link>
           </div>
           <div className="flex flex-col gap-y-2">
-            <h3 className="font-semibold uppercase text-xl text-gray-400">Socials</h3>
+            <h3 className="font-semibold uppercase text-xl text-red-400">Socials</h3>
             <div className="flex justify-between font-medium uppercase">
               <Link href={"https://www.linkedin.com/company/codeclub-jusl/"} target="_blank">Linkedin</Link>
               <Link href={"https://youtube.com/@codeclubjusl"} target="_blank">Youtube</Link>
@@ -38,7 +38,7 @@ function Contact() {
       </div>
 
       {/* Footer */}
-      <footer className="grid h-full w-full lg:grid-cols-2 place-items-center border-t border-t-gray-300/50 py-4">
+      <footer className="grid h-full w-full lg:grid-cols-2 place-items-center border-t border-t-gray-300/50 py-8">
         <h1 className="text-3xl lg:text-6xl 2xl:text-8xl font-semibold text-center">CodeClub JUSL</h1>
         <nav className="flex flex-col gap-y-1 lg:gap-y-3 text-center text-lg lg:text-xl 2xl:font-medium tracking-wide uppercase pt-3">
           <Link href={"/"}>Home</Link>
