@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { UserRole } from "@prisma/client";
 import { Event } from "@/types/events";
+import { SERVER_URL } from "@/utils/constants";
 
 type DashboardTeam = {
   id: string;
@@ -32,7 +33,7 @@ type DashboardUser = {
 function Dashboard({ user }: { user: DashboardUser }) {
   const handleLogout = () => {
     signOut({
-      redirectTo: "/signin",
+      redirectTo: `${SERVER_URL}/signin`
     });
   };
 

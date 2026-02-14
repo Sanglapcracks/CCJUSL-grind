@@ -121,7 +121,7 @@ function SignUpForm() {
   };
 
   return (
-    <div className="flex h-full min-h-[80vh] flex-col items-center justify-center gap-8">
+    <div className="flex h-full min-h-[80vh] flex-col items-center justify-center gap-8 py-8">
       <h1 className="text-5xl font-semibold">Sign Up</h1>
       <div className="flex w-full flex-col items-center gap-4">
         <div className="flex w-full flex-col items-center gap-2">

@@ -63,7 +63,7 @@ function SignInForm() {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center gap-8 h-full min-h-[80vh]">
+        <div className="flex flex-col items-center justify-center gap-8 h-full min-h-[80vh] py-8">
             <h1 className="text-5xl font-semibold">
                 Login
             </h1>

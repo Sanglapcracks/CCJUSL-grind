@@ -5,9 +5,10 @@ import bcrypt from "bcryptjs";
 import { prisma } from "@/prisma/client";
 import { auth, signIn, unstable_update } from "@/auth";
 import { redirect } from "next/navigation";
-import { CONST } from "@/utils/constants";
+import { CONST, SERVER_URL } from "@/utils/constants";
 import { AuthError } from "next-auth";
 import { UserRole } from "@prisma/client";
+import { withAuth } from "@/utils/withAuth";
 
 const getUserByEmail = async (email: string | null) => {
   if (!email) return null;
@@ -127,21 +128,16 @@ const signup = async (user: User, hCaptchaToken: string | null) => {
 };
 
 const checkAuthentication = async (redirectUrl = "") => {
-  let session = await auth();
+  const session = await auth();
   const encodedRedirectUrl = encodeURIComponent(redirectUrl);
   if (!session || !session.user || !session.user.id)
     redirect(`/signin?redirect=${encodedRedirectUrl}`);
 
   if(redirectUrl.indexOf("dashboard") !== -1) return session.user;
 
-  if(!session.user.emailVerified || !session.user.registrationComplete){
-    const status = await checkRegistrationStatus(session.user.id);
-    if(!session.user.emailVerified && status.emailVerified) session = await updateVerification();
-    if(session && !session.user.registrationComplete && status.registrationComplete) session = await updateRegistrationStatus();
-    
-    if(!session || !session.user.emailVerified || !session.user.registrationComplete) 
+  if(!session.user.emailVerified || !session.user.registrationComplete)
       redirect(`/dashboard?redirect=${encodedRedirectUrl}`);
-  }
+  
 
   return session.user;
 };
@@ -169,15 +165,15 @@ const checkRegistrationStatus = async (id: string | undefined) => {
   return user;
 };
 
-const updateVerification = async () => {
+const updateVerification = withAuth(async () => {
   const res = await unstable_update({ user: { emailVerified: new Date() } });
   return res;
-};
+});
 
-const updateRegistrationStatus = async () => {
+const updateRegistrationStatus = withAuth(async () => {
   const res = await unstable_update({ user: { registrationComplete: true } });
   return res;
-};
+});
 
 export {
   getUserByEmail,
