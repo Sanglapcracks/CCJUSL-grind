@@ -308,10 +308,10 @@ function Hero() {
           variants={fadeUp}
           className="w-11/12 max-w-2xl text-center text-xs leading-relaxed text-white/70 sm:text-base lg:text-lg"
         >
-          CodeClub JUSL is the official coding club of Jadavpur University that
+          {/*CodeClub JUSL is the official coding club of Jadavpur University that
           operates from the Salt Lake Campus. It offers a collaborative platform
           for individuals passionate about tech and programming to learn and
-          share their knowledge.
+          share their knowledge.*/}
         </motion.p>
 
         {/* CTA Buttons */}
@@ -320,13 +320,13 @@ function Hero() {
             href="/events"
             className="border border-red-400 px-6 py-2.5 text-xs sm:text-sm uppercase tracking-wider text-red-400 transition-all duration-300 hover:bg-red-400 hover:text-black"
           >
-            Explore Events
+
           </Link>
           <Link
             href="/signin"
             className="border border-white/20 px-6 py-2.5 text-xs sm:text-sm uppercase tracking-wider text-white/70 transition-all duration-300 hover:border-white hover:text-white"
           >
-            Join Us
+
           </Link>
         </motion.div>
       </motion.div>
