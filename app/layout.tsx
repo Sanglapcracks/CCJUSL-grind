@@ -38,7 +38,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${jetbrainsMono.variable} antialiased`}
       >
-        <Navbar fromLayout={true} />
+        <Navbar />
         <ConfirmationDialogContextProvider>
         {children}
         </ConfirmationDialogContextProvider>

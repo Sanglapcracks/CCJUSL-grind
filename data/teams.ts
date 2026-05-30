@@ -1,0 +1,336 @@
+import { TeamMember } from "@/types";
+
+export const teamCategories = [
+  { key: "core", label: "Core Team" },
+  { key: "cp", label: "CP Team" },
+  { key: "development", label: "Development Team" },
+  { key: "aiml", label: "AI/ML Team" },
+  { key: "design", label: "Design Team" },
+  { key: "pr", label: "PR Team" },
+  { key: "logistics", label: "Logistics Team" },
+  { key: "sponsorship", label: "Sponsorship Team" },
+] as const;
+
+export const teamMembers: TeamMember[] = [
+  // Core Team
+  {
+    id: "t1",
+    name: "Arjun Sharma",
+    position: "President",
+    photo: "/images/ccjusl-logo.png",
+    team: "core",
+    bio: "Final year CSE student with a passion for building tech communities. Leads the vision and operations of CodeClub JUSL.",
+    responsibilities: [
+      "Overall club management",
+      "Strategic planning",
+      "External partnerships",
+    ],
+    socials: { linkedin: "#", github: "#" },
+  },
+  {
+    id: "t2",
+    name: "Priya Das",
+    position: "Vice President",
+    photo: "/images/ccjusl-logo.png",
+    team: "core",
+    bio: "Third year IT student passionate about open-source development and community building.",
+    responsibilities: [
+      "Event coordination",
+      "Team management",
+      "Member relations",
+    ],
+    socials: { linkedin: "#", github: "#" },
+  },
+  {
+    id: "t3",
+    name: "Rahul Mukherjee",
+    position: "General Secretary",
+    photo: "/images/ccjusl-logo.png",
+    team: "core",
+    bio: "Third year ECE student with strong organizational skills and a knack for bringing people together.",
+    responsibilities: [
+      "Documentation",
+      "Meeting coordination",
+      "Communications",
+    ],
+    socials: { linkedin: "#", github: "#" },
+  },
+  {
+    id: "t4",
+    name: "Sneha Roy",
+    position: "Treasurer",
+    photo: "/images/ccjusl-logo.png",
+    team: "core",
+    bio: "Second year CSE student with experience in financial management and event budgeting.",
+    responsibilities: [
+      "Financial planning",
+      "Budget management",
+      "Sponsorship funds",
+    ],
+    socials: { linkedin: "#" },
+  },
+
+  // CP Team
+  {
+    id: "t5",
+    name: "Aman Gupta",
+    position: "CP Lead",
+    photo: "/images/ccjusl-logo.png",
+    team: "cp",
+    bio: "Expert competitive programmer with ratings on Codeforces and CodeChef. Mentors beginners in algorithmic thinking.",
+    responsibilities: [
+      "Problem setting for H42",
+      "CP workshops",
+      "Contest management",
+    ],
+    socials: { linkedin: "#", github: "#" },
+  },
+  {
+    id: "t6",
+    name: "Ananya Sen",
+    position: "CP Coordinator",
+    photo: "/images/ccjusl-logo.png",
+    team: "cp",
+    bio: "Third year student with a deep love for algorithms and data structures.",
+    responsibilities: [
+      "Practice session organization",
+      "Problem curation",
+      "Participant guidance",
+    ],
+    socials: { linkedin: "#", github: "#" },
+  },
+  {
+    id: "t7",
+    name: "Vikram Chatterjee",
+    position: "CP Mentor",
+    photo: "/images/ccjusl-logo.png",
+    team: "cp",
+    bio: "Experienced programmer with multiple ICPC regional participations.",
+    responsibilities: [
+      "Mentoring juniors",
+      "Advanced problem solving sessions",
+    ],
+    socials: { github: "#" },
+  },
+
+  // Development Team
+  {
+    id: "t8",
+    name: "Karan Mehta",
+    position: "Dev Lead",
+    photo: "/images/ccjusl-logo.png",
+    team: "development",
+    bio: "Full-stack developer specializing in Next.js and modern web technologies. Maintains the CodeClub website.",
+    responsibilities: [
+      "Website development",
+      "Technical architecture",
+      "Code reviews",
+    ],
+    socials: { linkedin: "#", github: "#" },
+  },
+  {
+    id: "t9",
+    name: "Diya Banerjee",
+    position: "Frontend Developer",
+    photo: "/images/ccjusl-logo.png",
+    team: "development",
+    bio: "Creative developer with an eye for design and a passion for building beautiful user interfaces.",
+    responsibilities: [
+      "UI/UX implementation",
+      "Frontend optimization",
+      "Responsive design",
+    ],
+    socials: { linkedin: "#", github: "#" },
+  },
+  {
+    id: "t10",
+    name: "Sourav Mondal",
+    position: "Backend Developer",
+    photo: "/images/ccjusl-logo.png",
+    team: "development",
+    bio: "Backend enthusiast experienced in Node.js, databases, and API design.",
+    responsibilities: [
+      "API development",
+      "Database management",
+      "Server infrastructure",
+    ],
+    socials: { github: "#" },
+  },
+
+  // AI/ML Team
+  {
+    id: "t11",
+    name: "Ritika Ghosh",
+    position: "AI/ML Lead",
+    photo: "/images/ccjusl-logo.png",
+    team: "aiml",
+    bio: "Researcher in deep learning and NLP. Leads workshops on machine learning fundamentals and advanced topics.",
+    responsibilities: [
+      "ML workshops",
+      "Research projects",
+      "Epochalypse event management",
+    ],
+    socials: { linkedin: "#", github: "#" },
+  },
+  {
+    id: "t12",
+    name: "Aditya Bose",
+    position: "Data Science Coordinator",
+    photo: "/images/ccjusl-logo.png",
+    team: "aiml",
+    bio: "Passionate about data science and its applications in solving real-world problems.",
+    responsibilities: [
+      "Data science sessions",
+      "Kaggle competitions",
+      "Project mentoring",
+    ],
+    socials: { linkedin: "#", github: "#" },
+  },
+  {
+    id: "t13",
+    name: "Neha Saha",
+    position: "ML Researcher",
+    photo: "/images/ccjusl-logo.png",
+    team: "aiml",
+    bio: "Working on computer vision projects and contributing to open-source ML libraries.",
+    responsibilities: [
+      "Research projects",
+      "Workshop content creation",
+    ],
+    socials: { github: "#" },
+  },
+
+  // Design Team
+  {
+    id: "t14",
+    name: "Ishaan Dutta",
+    position: "Design Lead",
+    photo: "/images/ccjusl-logo.png",
+    team: "design",
+    bio: "Graphic designer and UI/UX enthusiast. Creates all visual assets for CodeClub events and branding.",
+    responsibilities: [
+      "Event posters",
+      "Brand guidelines",
+      "Social media graphics",
+    ],
+    socials: { linkedin: "#" },
+  },
+  {
+    id: "t15",
+    name: "Tanisha Majumdar",
+    position: "Visual Designer",
+    photo: "/images/ccjusl-logo.png",
+    team: "design",
+    bio: "Creative thinker with expertise in Figma and Adobe Creative Suite.",
+    responsibilities: [
+      "UI mockups",
+      "Marketing materials",
+      "Video editing",
+    ],
+    socials: { linkedin: "#" },
+  },
+
+  // PR Team
+  {
+    id: "t16",
+    name: "Rohan Pal",
+    position: "PR Lead",
+    photo: "/images/ccjusl-logo.png",
+    team: "pr",
+    bio: "Manages the public face of CodeClub JUSL across all social platforms and university channels.",
+    responsibilities: [
+      "Social media management",
+      "Content creation",
+      "University liaison",
+    ],
+    socials: { linkedin: "#", twitter: "#" },
+  },
+  {
+    id: "t17",
+    name: "Megha Sarkar",
+    position: "Content Writer",
+    photo: "/images/ccjusl-logo.png",
+    team: "pr",
+    bio: "Skilled writer who crafts engaging content for events, blogs, and social media.",
+    responsibilities: [
+      "Blog posts",
+      "Event descriptions",
+      "Newsletter",
+    ],
+    socials: { linkedin: "#" },
+  },
+  {
+    id: "t18",
+    name: "Ankit Kumar",
+    position: "Social Media Manager",
+    photo: "/images/ccjusl-logo.png",
+    team: "pr",
+    bio: "Keeps the club's social media presence active and engaging.",
+    responsibilities: [
+      "Instagram management",
+      "LinkedIn posts",
+      "Community engagement",
+    ],
+    socials: { linkedin: "#" },
+  },
+
+  // Logistics Team
+  {
+    id: "t19",
+    name: "Sudipta Nag",
+    position: "Logistics Lead",
+    photo: "/images/ccjusl-logo.png",
+    team: "logistics",
+    bio: "The operational backbone of every CodeClub event. Ensures everything runs smoothly on event day.",
+    responsibilities: [
+      "Venue management",
+      "Equipment setup",
+      "On-site coordination",
+    ],
+    socials: { linkedin: "#" },
+  },
+  {
+    id: "t20",
+    name: "Pooja Bhattacharya",
+    position: "Logistics Coordinator",
+    photo: "/images/ccjusl-logo.png",
+    team: "logistics",
+    bio: "Detail-oriented organizer who manages the behind-the-scenes work for all club activities.",
+    responsibilities: [
+      "Inventory management",
+      "Transportation",
+      "Volunteer coordination",
+    ],
+    socials: { linkedin: "#" },
+  },
+
+  // Sponsorship Team
+  {
+    id: "t21",
+    name: "Debanjan Roy",
+    position: "Sponsorship Lead",
+    photo: "/images/ccjusl-logo.png",
+    team: "sponsorship",
+    bio: "Builds and maintains relationships with corporate sponsors and partners to support club activities.",
+    responsibilities: [
+      "Sponsor outreach",
+      "Partnership management",
+      "Proposal writing",
+    ],
+    socials: { linkedin: "#" },
+  },
+  {
+    id: "t22",
+    name: "Shreya Chakraborty",
+    position: "Partnership Coordinator",
+    photo: "/images/ccjusl-logo.png",
+    team: "sponsorship",
+    bio: "Focuses on creating mutually beneficial partnerships between the club and industry partners.",
+    responsibilities: [
+      "Industry relations",
+      "Sponsor deliverables",
+      "Financial documentation",
+    ],
+    socials: { linkedin: "#" },
+  },
+];

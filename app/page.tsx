@@ -1,24 +1,25 @@
 import React from "react";
 import Hero from "@/components/Home/Hero";
-import Gallery from "@/components/Home/Gallery";
+import AboutUniversity from "@/components/Home/AboutUniversity";
+import AboutClub from "@/components/Home/AboutClub";
 import Contact from "@/components/Home/Contact";
-import Events from "@/components/Home/Events";
-import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
-function page() {
+export default function HomePage() {
   return (
-    <div className="font-jetbrains-mono absolute w-full scroll-smooth">
-      <div className="fixed z-10 flex h-screen flex-col items-center">
-        <Navbar />
+    <div className="font-jetbrains-mono relative w-full scroll-smooth bg-black overflow-x-hidden">
+      {/* Fixed Hero Backdrop covering 1 screen */}
+      <div className="fixed inset-0 z-0 h-screen w-full">
         <Hero />
       </div>
-      <div className="relative top-0 z-20 mt-[100vh] lg:sticky lg:h-screen">
-        <Gallery />
-        <Events />
+
+      {/* Main content sliding up over the Hero */}
+      <div className="relative z-10 mt-[100vh] w-full bg-black shadow-[0_-24px_48px_rgba(0,0,0,0.85)]">
+        <AboutUniversity />
+        <AboutClub />
         <Contact />
+        <Footer />
       </div>
     </div>
   );
 }
-
-export default page;

@@ -7,9 +7,10 @@ import {
   Hash,
   Phone,
 } from "lucide-react";
-import Link from "next/link";
+
 import Image from "next/image";
 import RegistrationButton from "@/components/Events/RegistrationButton";
+import Footer from "@/components/Footer";
 
 export default async function Page({
   params,
@@ -191,18 +192,8 @@ export default async function Page({
         </div>
       </div>
 
-      <footer className="grid h-full w-full place-items-center border-t border-t-gray-300/50 py-8 lg:grid-cols-2">
-        <h1 className="text-center text-3xl font-semibold lg:text-6xl 2xl:text-8xl">
-          CodeClub JUSL
-        </h1>
-        <nav className="flex flex-col gap-y-1 pt-3 text-center text-lg tracking-wide uppercase lg:gap-y-3 lg:text-xl 2xl:font-medium">
-          <Link href={"/"}>Home</Link>
-          <Link href={"/#events"}>Events</Link>
-        </nav>
-      </footer>
-      <p className="w-full border-t border-t-gray-300/50 py-3 text-center text-xs uppercase">
-        &copy; 2025 - CodeClub JUSL. All rights reserved.
-      </p>
+      <Footer />
     </div>
   );
 }
+
