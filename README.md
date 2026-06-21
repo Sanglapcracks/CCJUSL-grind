@@ -8,8 +8,8 @@
 
 1. Clone the repository
 ```bash
-git clone https://github.com/codeclubjusl/ccjusl-website.git
-cd ccjusl-website
+git clone https://github.com/codeclubjusl/Website.git
+cd Website
 ```
 
 2. Install dependencies
