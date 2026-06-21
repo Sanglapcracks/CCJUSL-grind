@@ -25,7 +25,7 @@ export const sponsors: Partner[] = [
 export const communityPartners: Partner[] = [
   {
     name: "ShadowScript",
-    image: "/images/partners/shadowscript.jpg",
+    image: "/images/partners/shadowscript.png",
   },
   {
     name: "Postman API Kolkata",
@@ -33,6 +33,6 @@ export const communityPartners: Partner[] = [
   },
   {
     name: "Anonymous Legion",
-    image: "", // Triggers placeholder rendering
+    image: "/images/partners/anonymous legion.jpg",
   },
 ];

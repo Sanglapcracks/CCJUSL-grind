@@ -12,7 +12,17 @@ export const teamCategories = [
 ] as const;
 
 export const teamMembers: TeamMember[] = [
-  // Core Team
+  // PR Team
+  {
+    id: "t4",
+    name: "Kaustav Mondal",
+    position: "PR Lead",
+    photo: "/member_photos/my-pic-it-kaustav-mondal.jpeg",
+    team: "pr",
+    graduationYear: 2027,
+    bio: "A proactive student with experience in public relations, event management, and logistics coordination. Currently serving as PR Lead at Code Club, JUSL, and as the All Event's POC for FETSU Presents SRIJAN-2K26, overseeing event planning and execution. Also contributes as a Logistics Member at Jadavpur University Gaming Society (JUGS). Winner of PitchGenix – Startup Pitch Competition (1st Place) at E-Weekend 2023.",
+    socials: { linkedin: "https://www.linkedin.com/in/kaustav-mondal2005", github: "https://github.com/KaustavJu27" },
+  },
   {
     id: "t1",
     name: "Sanjib Murmu",
@@ -24,9 +34,45 @@ export const teamMembers: TeamMember[] = [
     socials: { linkedin: "https://www.linkedin.com/in/sanjibmurmu/", github: "https://github.com/SanjibMurmu" },
   },
   {
+    id: "t3",
+    name: "Sauhardya Hazra",
+    position: "PR Coordinator",
+    photo: "/member_photos/whatsapp-image-2026-06-04-at-10-57-13-am-sauhardya-hazra.jpeg",
+    team: "pr",
+    graduationYear: 2028,
+    bio: "I am an IT engineering student with a strong interest in programming, artificial intelligence, and problem-solving. I enjoy learning new technologies, building projects, and participating in coding competitions. I am always eager to improve my technical skills and work collaboratively with others.",
+    socials: { linkedin: "https://www.linkedin.com/in/sauhardya-hazra-b44110324", github: "https://github.com/Sauhardya007" },
+  },
+  {
     id: "t2",
+    name: "Md Arsalan",
+    position: "PR Coordinator",
+    photo: "/member_photos/img-20260602-024925-mohammed-arsalan.png",
+    team: "pr",
+    graduationYear: 2029,
+    bio: "Love making trends that go further. ",
+    achievements: [
+      "Designed the CodeClub JUSL logo",
+      "Tech Lead of Srijan'2026",
+      "Immense experience in UI/UX and branding"
+    ],
+    socials: { linkedin: "https://www.linkedin.com/in/md-arsalan-0b6315371?utm_source=share_via&utm_content=profile&utm_medium=member_android", github: "https://github.com/mdarsalanmahtab1-dotcom" },
+  },
+  // Design Team
+  {
+    id: "t26",
+    name: "Param Ray",
+    position: "Design Lead",
+    photo: "/images/ccjusl-logo.png",
+    team: "design",
+    graduationYear: 2027,
+    bio: "I am a passionate designer with a strong foundation in UI/UX and branding. I enjoy creating visually appealing and user-friendly digital experiences.",
+    socials: { linkedin: "https://www.linkedin.com/in/param-ray-9b8b8b294/", github: "https://github.com/ParamRay" },
+  },
+  {
+    id: "t5",
     name: "Dipram Biswas",
-    position: "Design Team Coordinator",
+    position: "Design Coordinator",
     photo: "/member_photos/profilepic-dipram-biswas.png",
     team: "design",
     graduationYear: 2028,
@@ -39,53 +85,19 @@ export const teamMembers: TeamMember[] = [
     socials: { linkedin: "https://www.linkedin.com/in/dipram-biswas/", github: "https://github.com/Dipram-9090" },
   },
   {
-    id: "t2",
-    name: "Md Arsalan",
-    position: "PR Team member",
-    photo: "/member_photos/img-20260602-024925-mohammed-arsalan.png",
-    team: "pr",
-    graduationYear: 2029,
-    bio: "Love making trends that go further. ",
-    achievements: [
-      "Designed the CodeClub JUSL logo",
-      "Tech Lead of Srijan'2026",
-      "Immense experience in UI/UX and branding"
-    ],
-    socials: { linkedin: "https://www.linkedin.com/in/md-arsalan-0b6315371?utm_source=share_via&utm_content=profile&utm_medium=member_android", github: "https://github.com/mdarsalanmahtab1-dotcom" },
+    id: "t27",
+    name: "Sree Kertan",
+    position: "Design Coordinator",
+    photo: "/images/ccjusl-logo.png", 
+    team: "design",
+    graduationYear: 2028,
+    bio: "I am a passionate designer with a strong foundation in UI/UX and branding. I enjoy creating visually appealing and user-friendly digital experiences.",
+    socials: { linkedin: "https://www.linkedin.com/in/satyarth-sanyal-9b8b8b294/", github: "https://github.com/SatyarthSanyal" },
   },
   {
-    id: "t3",
-    name: "Rahul Pandey",
-    position: "Dev Team",
-    photo: "/member_photos/img-20260505-wa0012-rahul-pandey.jpg",
-    team: "development",
-    graduationYear: 2027,
-    bio: "Full Stack Dev and Machine Learning Enthusiast",
-    achievements: [
-      "Internship at Wells Fargo",
-      "Made the Sherlocked'26 competition app",
-      "HackForge 2025 Winner",
-    ],
-    socials: { linkedin: "https://www.linkedin.com/in/rahul-pandey2005", github: "https://github.com/rahul-p19" },
-  },
-  {
-    id: "t4",
-    name: "Tanish Majumdar",
-    position: "Dev Team",
-    photo: "/member_photos/tanish3-tanish.png",
-    team: "development",
-    graduationYear: 2027,
-    bio: "Dabble a bit in web dev,devops,ci/cd. Love to play basketball and watch f1.",
-    achievements: [
-      "Internship at Polycab"
-    ],
-    socials: { linkedin: "https://www.linkedin.com/in/tanish34", github: "https://github.com/tanish35" },
-  },
-
-  {
-    id: "t5",
+    id: "t6",
     name: "Anik Acharya",
-    position: "Design Team",
+    position: "Design Coordinator",
     photo: "/member_photos/img-20260531-wa0050-anik-acharya.jpg",
     team: "design",
     graduationYear: 2029,
@@ -95,187 +107,93 @@ export const teamMembers: TeamMember[] = [
     ],
     socials: { linkedin: "https://www.linkedin.com/in/anik-acharya-99a349399?utm_source=share_via&utm_content=profile&utm_medium=member_android", github: "https://github.com/anikacharya07" },
   },
-  {
-    id: "t6",
-    name: "Swarnendu Banerjee",
-    position: "AI/ML Team",
-    photo: "/member_photos/img-20250912-wa0042-swarnendu-banerjee.jpg",
-    team: "aiml",
-    graduationYear: 2027,
-    bio: "Passionate about building scalable and reliable software systems, exploring distributed architectures, cloud technologies, observability, automation, and AI-driven solutions to improve system performance and reliability.",
-    achievements: [
-      "Winner at Hacktropica(MLH)",
-      "4th position in COMSYS Hackathon IV",
-      "Guardian@Leetcode",
-      "Internship at PayPal"
-    ],
-    socials: { linkedin: "https://www.linkedin.com/in/swarnendu-banerjee-78aa49298/", github: "https://github.com/Pookie-n-Rookie" },
-  },
-  {
-    id: "t7",
-    name: "Ankit Kundu",
-    position: "CP Team",
-    photo: "/member_photos/20251222-153321-1-ankit-kundu.jpg",
-    team: "cp",
-    graduationYear: 2027,
-    bio: "I have a lot of interest in competitive programming, but I often fall short in contests. Proudly. I am an amateur CP coder.",
-    achievements: [
-      "Internship at Sprinklr"
-    ],
-    socials: { linkedin: "https://www.linkedin.com/in/ankit-kundu-50522a2b2", github: "https://github.com/ankitkundu837" },
-  },
 
   // Development Team
   {
-    id: "t8",
-    name: "Sauhardya Hazra",
-    position: "PR team",
-    photo: "/member_photos/whatsapp-image-2026-06-04-at-10-57-13-am-sauhardya-hazra.jpeg",
-    team: "pr",
-    graduationYear: 2028,
-    bio: "I am an IT engineering student with a strong interest in programming, artificial intelligence, and problem-solving. I enjoy learning new technologies, building projects, and participating in coding competitions. I am always eager to improve my technical skills and work collaboratively with others.",
-    socials: { linkedin: "https://www.linkedin.com/in/sauhardya-hazra-b44110324", github: "https://github.com/Sauhardya007" },
-  },
-  {
     id: "t9",
-    name: "Krish Agarwal",
-    position: "Logistics Team",
-    photo: "/member_photos/screenshot-2026-06-07-231101-krish-agarwal.png",
-    team: "logistics",
-    graduationYear: 2028,
-    bio: "I'm Krish Agarwal, Logistics lead, very active, trying to give the best for the club.",
-    achievements: [
-      "Organised Hackforge"
-    ],
-    socials: { linkedin: "https://www.linkedin.com/in/krish-agarwal-b67b57321/", github: "https://github.com/krishjuit" },
-  },
-  {
-    id: "t10",
-    name: "Swapnendu Chatterjee ",
-    position: "Sponsorship Team",
-    photo: "/member_photos/passport-photo-swapnendu-chatterjee.jpg",
-    team: "sponsorship",
-    graduationYear: 2028,
-    bio: "CF Newbie, LC 1500+,",
-    socials: { linkedin: "https://www.linkedin.com/in/swapnendu-chatterjee-72242a368?trk=contact-info", github: "https://github.com/codephilic67" },
-  },
-
-  // AI/ML Team
-  {
-    id: "t11",
-    name: "Swastik Sengupta",
-    position: "Sponsorship Team",
-    photo: "/member_photos/1000131488-1-swastik-sengupta.jpg",
-    team: "sponsorship",
-    graduationYear: 2028,
-    bio: "I consider myself a highly analytical and calm individual. I like persuasion and convincing people, hence my interest in sponsorship.",
-    socials: { linkedin: "https://www.linkedin.com/in/swastik-sengupta-940a31366?utm_source=share_via&utm_content=profile&utm_medium=member_android" },
-  },
-  {
-    id: "t12",
-    name: "Saptarshi Upadhyay",
-    position: "Sponsorship Team",
-    photo: "/member_photos/file-saptarshi-upadhyay.jpg",
-    team: "sponsorship",
-    graduationYear: 2028,
-    bio: "I am passionate about coding, problem-solving, and building useful projects. I have achieved a LeetCode rating of 1845, Codeforces Specialist status, and have been a finalist in multiple national-level hackathons. I enjoy learning new technologies, working in teams, and taking on new challenges.",
-    socials: { linkedin: "https://www.linkedin.com/in/saptarshi-upadhyay/", github: "https://github.com/saptarshiUpadhyay2006" },
-  },
-  {
-    id: "t13",
-    name: "Syed Hasan Farhan",
-    position: "Logistics Team",
-    photo: "/member_photos/whatsapp-image-2026-06-07-at-11-30-01-pm-farhan-syed.jpeg",
-    team: "logistics",
-    graduationYear: 2029,
-    bio: "I have quite a hand on knowledge in web dev, i made clone of some website(like amazon, only basic frontend with just html css). I have been helping seniors to manage events too during romanthan, srijan.",
-    socials: { linkedin: "https://www.linkedin.com/in/syed-hasan-farhan-71b262373/", github: "https://github.com/FarhanSyed987" },
-  },
-
-  // Design Team
-  {
-    id: "t14",
-    name: "Aritra mondal",
-    position: "Logistics Team",
-    photo: "/images/ccjusl-logo.png",
-    team: "logistics",
-    graduationYear: 2029,
-    bio: "i am a passionate and hardworking guy who wants to contribute to the growth of code club jusl..about achievements..i have made some frontend pages",
-    socials: {
-      linkedin: "https://www.linkedin.com/in/aritra-mondal-6b50353b0/", github: "https://github.com/ARITRA-MONDAL112007"
-    },
-  },
-  {
-    id: "t15",
     name: "Somnath Chattaraj",
-    position: "Development Team",
+    position: "Dev Lead",
     photo: "/member_photos/photo-2026-05-26-23-15-44-somnath-chattaraj.jpg",
     team: "development",
     graduationYear: 2027,
     bio: "yet to achieve",
     socials: { linkedin: "https://www.linkedin.com/in/Somnath-Chattaraj910/", github: "https://github.com/Somnath-Chattaraj" },
   },
-
-  // PR Team
-  /*
   {
-    id: "t17",
-    name: "Debarshi Mondal",
-    position: "AI/ML Team",
-    photo: "/member_photos/cc-photo-debarshi-mondal.jpeg",
+    id: "t8",
+    name: "Tanish Majumdar",
+    position: "Dev Lead",
+    photo: "/member_photos/tanish3-tanish.png",
+    team: "development",
+    graduationYear: 2027,
+    bio: "Dabble a bit in web dev,devops,ci/cd. Love to play basketball and watch f1.",
+    achievements: [
+      "Internship at Polycab"
+    ],
+    socials: { linkedin: "https://www.linkedin.com/in/tanish34", github: "https://github.com/tanish35" },
+  },
+  {
+    id: "t25",
+    name: "Rajdeep Das",
+    position: "Dev Coordinator",
+    photo: "/member_photos/rishabh-singh.jpg",
+    team: "development",
+    graduationYear: 2028,
+    bio: "I am a passionate developer with a strong foundation in web technologies and a keen interest in artificial intelligence. I enjoy working on innovative projects and collaborating with others to create impactful solutions.",
+    socials: { linkedin: "https://www.linkedin.com/in/rishabh-singh-7a8b4b283/", github: "https://github.com/Rishabh-Singh-2006" },
+  },
+  {
+    id: "t24",
+    name: "Sanglap Kundu",
+    position: "Dev Coordinator",
+    photo: "/member_photos/IMG_20250426_142421115_HDR - Sanglap Das.jpg",
+    team: "development",
+    graduationYear: 2028,
+    bio: "I am adaptable and hard-working.I try to give my best and am a quick learner.",
+    socials: { linkedin: "https://www.linkedin.com/in/sanglap-das-41652b294/", github: "https://github.com/Sanglapcracks" },
+  },
+  {
+    id: "t23",
+    name: "Saptarshi Upadhyay",
+    position: "Dev Coordinator",
+    photo: "/member_photos/file-saptarshi-upadhyay.jpg",
+    team: "development",
+    graduationYear: 2028,
+    bio: "I am passionate about coding, problem-solving, and building useful projects. I have achieved a LeetCode rating of 1845, Codeforces Specialist status, and have been a finalist in multiple national-level hackathons. I enjoy learning new technologies, working in teams, and taking on new challenges.",
+    socials: { linkedin: "https://www.linkedin.com/in/saptarshi-upadhyay/", github: "https://github.com/saptarshiUpadhyay2006" },
+  },
+
+  // AI/ML Team
+  {
+    id: "t11",
+    name: "Daniyal Anis",
+    position: "AI/ML Lead",
+    photo: "/member_photos/Screenshot_20260620_113053_Photos - Daniyal Anis.jpg",
     team: "aiml",
     graduationYear: 2027,
-    bio: "I am a passionate software developer with a strong interest in algorithms, problem-solving, and ML and DL . I enjoy building scalable applications using modern technologies and tackling complex technical challenges with efficient solutions. My analytical mindset and attention to detail help me approach problems methodically and effectively. I am naturally curious, enjoy learning new concepts, and continuously seek opportunities to expand my knowledge in software engineering and computational science. I am persistent, adaptable, and motivated by creating impactful and well-designed software systems and machine learning models.",
-    socials: { linkedin: "https://www.linkedin.com/in/debarshi-mondal-5567ba2a7/", github: "https://github.com/DebarshiMondal1055" },
-  },*/
-  {
-    id: "t18",
-    name: "Md mirajul seikh",
-    position: "Sponsorship Team",
-    photo: "/member_photos/img-20260608-073122-md-mirajul-seikh.jpg",
-    team: "sponsorship",
-    graduationYear: 2029,
-    bio: "B.E. Information Technology student at Jadavpur University with good communication and interpersonal skills. I am a quick learner, hardworking, and confident in interacting with people. I am interested in sponsorship and corporate outreach activities.",
-    socials: { linkedin: "https://www.linkedin.com/in/md-mirajul-seikh-undefined-325b03370?utm_source=share_via&utm_content=profile&utm_medium=member_android", github: "https://github.com/mdmirajulseikh91-oss" },
+    bio: "Passionate about building scalable and reliable software systems, exploring distributed architectures, cloud technologies, observability, automation, and AI-driven solutions to improve system performance and reliability.",
+    achievements: [
+      "Candidate Master on Codeforces",
+      "SDE Intern@ D. E. Shaw & Co.",
+    ],
+    socials: { linkedin: "https://www.linkedin.com/in/daniyalanis", github: "https://www.github.com/cricsion" },
   },
-
-  // Logistics Team
   {
-    id: "t19",
-    name: "Kaustav Mondal",
-    position: "PR team",
-    photo: "/member_photos/my-pic-it-kaustav-mondal.jpeg",
-    team: "pr",
+    id: "t12",
+    name: "Sarbo Sarcar",
+    position: "AI/ML Lead",
+    photo: "/member_photos/Sarbo Sarcar - Sarbo Sarcar.jpeg",
+    team: "aiml",
     graduationYear: 2027,
-    bio: "A proactive student with experience in public relations, event management, and logistics coordination. Currently serving as PR Lead at Code Club, JUSL, and as the All Event's POC for FETSU Presents SRIJAN-2K26, overseeing event planning and execution. Also contributes as a Logistics Member at Jadavpur University Gaming Society (JUGS). Winner of PitchGenix – Startup Pitch Competition (1st Place) at E-Weekend 2023.",
-    socials: { linkedin: "https://www.linkedin.com/in/kaustav-mondal2005", github: "https://github.com/KaustavJu27" },
+    bio: "As a research-driven science enthusiast and technology aficionado, I take a deep interest in transcending the theoretical constraints of an academic curriculum and applying learnt concepts to build practical solutions with a global outlook.",
+    socials: { linkedin: "https://www.linkedin.com/in/sarbosarcar/", github: "https://github.com/sarbosarcar" },
   },
 
-  // Sponsorship Team
+  // CP Team
   {
-    id: "t21",
-    name: "Shlok Sinha",
-    position: "Logistics Lead",
-    photo: "/member_photos/screenshot-20260608-054404-kaagaz-scanner-pdf-shlok-sinha.png",
-    team: "logistics",
-    graduationYear: 2029,
-    bio: "I have a strong interest in technology, problem-solving, and continuous learning. I am a responsible and organized individual who works well in team environments and adapts quickly to new challenges. Through my preparation for competitive examinations and academic pursuits, I have developed discipline, time-management skills, and the ability to work under pressure. I am eager to contribute to the Logistics Team by supporting event planning, coordination, and smooth execution of club activities while gaining valuable teamwork and leadership experience.",
-    socials: { linkedin: "https://www.linkedin.com/in/shlok-sinha-3593b040b/", github: "https://github.com/ShlokSinha3000" },
-  },
-  {
-    id: "t21",
-    name: "Sourav Dutta ",
-    position: "Logistics Lead",
-    photo: "/member_photos/img-20260421-140021-638-sourav-dutta.webp",
-    team: "logistics",
-    graduationYear: 2029,
-    bio: "A small website designing using AI",
-    socials: { linkedin: "https://www.linkedin.com/in/sourav-dutta-419549389/", github: "https://github.com/souravdutta656" },
-  },
-  {
-    id: "t21",
+    id: "t14",
     name: "Sayan Dutta",
-    position: "CP Team",
+    position: "CP Lead",
     photo: "/member_photos/img20251218172728-1-sayan-dutta.jpg",
     team: "cp",
     graduationYear: 2027,
@@ -289,9 +207,9 @@ export const teamMembers: TeamMember[] = [
     socials: { linkedin: "https://www.linkedin.com/in/sayan-dutta-4a0659282/", github: "https://github.com/Sayan-995" },
   },
   {
-    id: "t21",
+    id: "t15",
     name: "Neelim Goswami",
-    position: "CP Team",
+    position: "CP Lead",
     photo: "/member_photos/img-20251205-000504-neelim-goswami.jpg",
     team: "cp",
     graduationYear: 2027,
@@ -306,18 +224,167 @@ export const teamMembers: TeamMember[] = [
       "Organized Pass The Baton for Srijan 2026."
     ],
     socials: { linkedin: "https://www.linkedin.com/in/neelim-goswami-064919283?utm_source=share_via&utm_content=profile&utm_medium=member_android", github: "https://github.com/goswamineelim" },
-  },/*
+  },
+
+  // Logistics Team
+  {
+    id: "t16",
+    name: "Krish Agarwal",
+    position: "Logistics Lead",
+    photo: "/member_photos/screenshot-2026-06-07-231101-krish-agarwal.png",
+    team: "logistics",
+    graduationYear: 2028,
+    bio: "I'm Krish Agarwal, Logistics lead, very active, trying to give the best for the club.",
+    achievements: [
+      "Organised Hackforge"
+    ],
+    socials: { linkedin: "https://www.linkedin.com/in/krish-agarwal-b67b57321/", github: "https://github.com/krishjuit" },
+  },
+  {
+    id: "t18",
+    name: "Aritra Mondal",
+    position: "Logistics Coordinator",
+    photo: "/member_photos/WhatsApp Image 2026-06-21 at 11.24.36 AM.jpeg",
+    team: "logistics",
+    graduationYear: 2029,
+    bio: "i am a passionate and hardworking guy who wants to contribute to the growth of code club jusl..about achievements..i have made some frontend pages",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/aritra-mondal-6b50353b0/", github: "https://github.com/ARITRA-MONDAL112007"
+    },
+  },
+  {
+    id: "t19",
+    name: "Shlok Sinha",
+    position: "Logistics Coordinator",
+    photo: "/member_photos/screenshot-20260608-054404-kaagaz-scanner-pdf-shlok-sinha.png",
+    team: "logistics",
+    graduationYear: 2029,
+    bio: "I have a strong interest in technology, problem-solving, and continuous learning. I am a responsible and organized individual who works well in team environments and adapts quickly to new challenges. Through my preparation for competitive examinations and academic pursuits, I have developed discipline, time-management skills, and the ability to work under pressure. I am eager to contribute to the Logistics Team by supporting event planning, coordination, and smooth execution of club activities while gaining valuable teamwork and leadership experience.",
+    socials: { linkedin: "https://www.linkedin.com/in/shlok-sinha-3593b040b/", github: "https://github.com/ShlokSinha3000" },
+  },
+  {
+    id: "t20",
+    name: "Sourav Dutta ",
+    position: "Logistics Coordinator",
+    photo: "/member_photos/img-20260421-140021-638-sourav-dutta.webp",
+    team: "logistics",
+    graduationYear: 2029,
+    bio: "A small website designing using AI",
+    socials: { linkedin: "https://www.linkedin.com/in/sourav-dutta-419549389/", github: "https://github.com/souravdutta656" },
+  },
+  {
+    id: "t17",
+    name: "Syed Hasan Farhan",
+    position: "Logistics Coordinator",
+    photo: "/member_photos/whatsapp-image-2026-06-07-at-11-30-01-pm-farhan-syed.jpeg",
+    team: "logistics",
+    graduationYear: 2029,
+    bio: "I have quite a hand on knowledge in web dev, i made clone of some website(like amazon, only basic frontend with just html css). I have been helping seniors to manage events too during romanthan, srijan.",
+    socials: { linkedin: "https://www.linkedin.com/in/syed-hasan-farhan-71b262373/", github: "https://github.com/FarhanSyed987" },
+  },
+
+  // Sponsorship Team
+  {
+    id: "t18",
+    name: "Ansh Kumar Singh",
+    position: "Sponsorship Lead",
+    photo: "/images/ccjusl-logo.png",
+    team: "sponsorship",
+    graduationYear: 2027,
+    bio: "i am a passionate and hardworking guy who wants to contribute to the growth of code club jusl..about achievements..i have made some frontend pages",
+    socials: {
+      linkedin: "https://www.linkedin.com/in/aritra-mondal-6b50353b0/", github: "https://github.com/ARITRA-MONDAL112007"
+    },
+  },
+  {
+    id: "t21",
+    name: "Swapnendu Chatterjee ",
+    position: "Sponsorship Coordinator",
+    photo: "/member_photos/passport-photo-swapnendu-chatterjee.jpg",
+    team: "sponsorship",
+    graduationYear: 2028,
+    bio: "CF Newbie, LC 1500+,",
+    socials: { linkedin: "https://www.linkedin.com/in/swapnendu-chatterjee-72242a368?trk=contact-info", github: "https://github.com/codephilic67" },
+  },
   {
     id: "t22",
-    name: "Asmit Deb",
-    position: "AI/ML Team",
-    photo: "/member_photos/dp2-asmit-deb.jpg",
-    team: "aiml",
-    graduationYear: 2027,
-    bio: "Curious, love problem-solving, and diving deep into topics.",
-    achievements: [
-      "Top 7 in SIH 2024", "top 100 in Adobe India Hackathon 2024"
-    ],
-    socials: { linkedin: "https://www.linkedin.com/in/asmit-deb-bba35b201/", github: "https://github.com/asmitdeb" },
-  },*/
+    name: "Swastik Sengupta",
+    position: "Sponsorship Coordinator",
+    photo: "/member_photos/1000131488-1-swastik-sengupta.jpg",
+    team: "sponsorship",
+    graduationYear: 2028,
+    bio: "I consider myself a highly analytical and calm individual. I like persuasion and convincing people, hence my interest in sponsorship.",
+    socials: { linkedin: "https://www.linkedin.com/in/swastik-sengupta-940a31366?utm_source=share_via&utm_content=profile&utm_medium=member_android" },
+  },
+  {
+    id: "t24",
+    name: "Md Mirajul Seikh",
+    position: "Sponsorship Coordinator",
+    photo: "/member_photos/img-20260608-073122-md-mirajul-seikh.jpg",
+    team: "sponsorship",
+    graduationYear: 2029,
+    bio: "B.E. Information Technology student at Jadavpur University with good communication and interpersonal skills. I am a quick learner, hardworking, and confident in interacting with people. I am interested in sponsorship and corporate outreach activities.",
+    socials: { linkedin: "https://www.linkedin.com/in/md-mirajul-seikh-undefined-325b03370?utm_source=share_via&utm_content=profile&utm_medium=member_android", github: "https://github.com/mdmirajulseikh91-oss" },
+  },
+
+  //Core Team
+  // {
+  //   id: "t25",
+  //   name: "Aritra Mondal",
+  //   position: "President",
+  //   photo: "/member_photos/WhatsApp Image 2026-06-21 at 11.01.39 AM.jpeg",
+  //   team: "core",
+  //   graduationYear: 2027,
+  //   bio: "I am a passionate and hardworking individual who is dedicated to contributing to the growth and success of Code Club JUSL. I have a strong interest in technology, problem-solving, and continuous learning. My goal is to lead the club towards achieving its objectives and fostering a collaborative and innovative environment for all members.",
+  //   achievements: [
+  //     "Research Intern @IIT Bombay(ISRO), IIT Patna, IIIT Bangalore and Jadavpur University ",
+  //     "Lead Organiser of Hackforge 2026 @Srijan 2026",
+  //     "Placement Coordinator @Jadavpur University",
+  //   ],
+  //   socials: { linkedin: "https://www.linkedin.com/in/aritra-mondal-b6712b28a/", github: "https://github.com/aritra-mondal-it" },
+  // },
+  // {
+  //   id: "t7",
+  //   name: "Rahul Pandey",
+  //   position: "Vice President",
+  //   photo: "/member_photos/img-20260505-wa0012-rahul-pandey.jpg",
+  //   team: "core",
+  //   graduationYear: 2027,
+  //   bio: "Full Stack Dev and Machine Learning Enthusiast",
+  //   achievements: [
+  //     "Internship at Wells Fargo",
+  //     "Made the Sherlocked'26 competition app",
+  //     "HackForge 2025 Winner",
+  //   ],
+  //   socials: { linkedin: "https://www.linkedin.com/in/rahul-pandey2005", github: "https://github.com/rahul-p19" },
+  // },
+  // {
+  //   id: "t13",
+  //   name: "Ankit Kundu",
+  //   position: "Treasurer",
+  //   photo: "/member_photos/20251222-153321-1-ankit-kundu.jpg",
+  //   team: "core",
+  //   graduationYear: 2027,
+  //   bio: "I have a lot of interest in competitive programming, but I often fall short in contests. Proudly. I am an amateur CP coder.",
+  //   achievements: [
+  //     "Internship at Sprinklr"
+  //   ],
+  //   socials: { linkedin: "https://www.linkedin.com/in/ankit-kundu-50522a2b2", github: "https://github.com/ankitkundu837" },
+  // },
+  // {
+  //   id: "t10",
+  //   name: "Swarnendu Banerjee",
+  //   position: "Treasurer",
+  //   photo: "/member_photos/img-20250912-wa0042-swarnendu-banerjee.jpg",
+  //   team: "core",
+  //   graduationYear: 2027,
+  //   bio: "Passionate about building scalable and reliable software systems, exploring distributed architectures, cloud technologies, observability, automation, and AI-driven solutions to improve system performance and reliability.",
+  //   achievements: [
+  //     "Winner at Hacktropica(MLH)",
+  //     "4th position in COMSYS Hackathon IV",
+  //     "Guardian@Leetcode",
+  //     "Internship at PayPal"
+  //   ],
+  //   socials: { linkedin: "https://www.linkedin.com/in/swarnendu-banerjee-78aa49298/", github: "https://github.com/Pookie-n-Rookie" },
+  // },
 ];
