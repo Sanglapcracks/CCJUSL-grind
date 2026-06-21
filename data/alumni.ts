@@ -4,7 +4,7 @@ export const alumniMembers: AlumniMember[] = [
     {
         id: "alumni-1",
         name: "Devanshu",
-        photo: "/images/juslcc-logo.png",
+        photo: "/alumni_photos/devanshu.jpeg",
         graduationYear: 2018,
         company: "Coda Payments",
         role: "SSE",
@@ -13,7 +13,7 @@ export const alumniMembers: AlumniMember[] = [
     {
         id: "alumni-2",
         name: "Gopal Goel",
-        photo: "/images/juslcc-logo.png",
+        photo: "/alumni_photos/gopal_goel.jpeg",
         graduationYear: 2018,
         company: "Microsoft",
         role: "SE-2",
@@ -22,7 +22,7 @@ export const alumniMembers: AlumniMember[] = [
     {
         id: "alumni-3",
         name: "Debdatta Biswas",
-        photo: "/images/juslcc-logo.png",
+        photo: "/alumni_photos/debdatta_biswas.jpeg",
         graduationYear: 2019,
         company: "Google",
         role: "SWE-3",
@@ -31,7 +31,7 @@ export const alumniMembers: AlumniMember[] = [
     {
         id: "alumni-4",
         name: "Gautam Agarwal",
-        photo: "/images/juslcc-logo.png",
+        photo: "/alumni_photos/gautam_agarwal.jpeg",
         graduationYear: 2019,
         company: "Amazon",
         role: "SDE-2",
@@ -40,7 +40,7 @@ export const alumniMembers: AlumniMember[] = [
     {
         id: "alumni-5",
         name: "Rishabh Raj",
-        photo: "/images/juslcc-logo.png",
+        photo: "/alumni_photos/rishabh_raj.jpeg",
         graduationYear: 2019,
         company: "Goldman Sachs",
         role: "ASD",
@@ -49,7 +49,7 @@ export const alumniMembers: AlumniMember[] = [
     {
         id: "alumni-6",
         name: "Harshita Moondra",
-        photo: "/images/juslcc-logo.png",
+        photo: "/alumni_photos/harshita_moondra.jpeg",
         graduationYear: 2020,
         company: "Flipkart",
         role: "SDE-3",
@@ -58,7 +58,7 @@ export const alumniMembers: AlumniMember[] = [
     {
         id: "alumni-7",
         name: "Karan Singh",
-        photo: "/images/juslcc-logo.png",
+        photo: "/alumni_photos/karan_singh.png",
         graduationYear: 2020,
         company: "Stealth Startup",
         role: "Product+Engineerinh",
@@ -67,7 +67,7 @@ export const alumniMembers: AlumniMember[] = [
     {
         id: "alumni-8",
         name: "Rishav Agarwal",
-        photo: "/images/juslcc-logo.png",
+        photo: "/alumni_photos/rishav_agarwal.jpeg",
         graduationYear: 2020,
         company: "Google",
         role: "SE",
@@ -76,7 +76,7 @@ export const alumniMembers: AlumniMember[] = [
     {
         id: "alumni-9",
         name: "Subham Agarwal",
-        photo: "/images/juslcc-logo.png",
+        photo: "/alumni_photos/subham_agarwal.jpeg",
         graduationYear: 2020,
         company: "Google",
         role: "SE",
@@ -85,7 +85,7 @@ export const alumniMembers: AlumniMember[] = [
     {
         id: "alumni-10",
         name: "Daipayan Mukherjee",
-        photo: "/images/juslcc-logo.png",
+        photo: "/alumni_photos/daipayan_mukherjee.jpeg",
         graduationYear: 2021,
         company: "Palantir",
         role: "SE",
@@ -94,7 +94,7 @@ export const alumniMembers: AlumniMember[] = [
     {
         id: "alumni-11",
         name: "Gaurav Damani",
-        photo: "/images/juslcc-logo.png",
+        photo: "/alumni_photos/gaurav_damani.jpeg",
         graduationYear: 2021,
         company: "Amazon",
         role: "SDE-2",
@@ -103,7 +103,7 @@ export const alumniMembers: AlumniMember[] = [
     {
         id: "alumni-12",
         name: "Archit Ranjan",
-        photo: "/images/juslcc-logo.png",
+        photo: "/alumni_photos/archit_ranjan.jpeg",
         graduationYear: 2022,
         company: "super.money",
         role: "SDE-2",
@@ -115,7 +115,7 @@ export const alumniMembers: AlumniMember[] = [
     {
         id: "alumni-13",
         name: "Lakshya Bengani",
-        photo: "/images/juslcc-logo.png",
+        photo: "/alumni_photos/lakshya_bengani.jpeg",
         graduationYear: 2022,
         company: "Amazon",
         role: "SDE-2",
@@ -126,7 +126,7 @@ export const alumniMembers: AlumniMember[] = [
     {
         id: "alumni-14",
         name: "Ritwick Raj",
-        photo: "/images/juslcc-logo.png",
+        photo: "/alumni_photos/ritwick_raj.png",
         graduationYear: 2022,
         company: "IIM Bangalore",
         role: "MBA Candidate",
@@ -137,7 +137,7 @@ export const alumniMembers: AlumniMember[] = [
     {
         id: "alumni-15",
         name: "Chirag Jaiswal",
-        photo: "/images/juslcc-logo.png",
+        photo: "/alumni_photos/chirag_jaiswal.jpeg",
         graduationYear: 2023,
         company: "Slice",
         role: "SSE",
@@ -148,7 +148,7 @@ export const alumniMembers: AlumniMember[] = [
     {
         id: "alumni-16",
         name: "Esha Basu",
-        photo: "/images/juslcc-logo.png",
+        photo: "/alumni_photos/esha_basu.jpeg",
         graduationYear: 2023,
         company: "Deutsche Bank",
         role: "SDE-2",
@@ -157,7 +157,7 @@ export const alumniMembers: AlumniMember[] = [
     {
         id: "alumni-17",
         name: "Priyam Raj",
-        photo: "/images/juslcc-logo.png",
+        photo: "/alumni_photos/priyam_raj.png",
         graduationYear: 2023,
         company: "Google",
         role: "SWE-3",
@@ -168,7 +168,7 @@ export const alumniMembers: AlumniMember[] = [
     {
         id: "alumni-18",
         name: "Sayak China",
-        photo: "/images/juslcc-logo.png",
+        photo: "/alumni_photos/sayak_china.jpeg",
         graduationYear: 2023,
         company: "Amazon",
         role: "SDE-1",
@@ -179,7 +179,7 @@ export const alumniMembers: AlumniMember[] = [
     {
         id: "alumni-19",
         name: "Arindam Halder",
-        photo: "/images/juslcc-logo.png",
+        photo: "/alumni_photos/arindam_halder.jpeg",
         graduationYear: 2024,
         company: "Deutsche Bank",
         role: "Senior Analyst",
@@ -191,7 +191,7 @@ export const alumniMembers: AlumniMember[] = [
     {
         id: "alumni-20",
         name: "Ayush Sharma",
-        photo: "/images/juslcc-logo.png",
+        photo: "/alumni_photos/ayush_sharma.jpeg",
         graduationYear: 2024,
         company: "Warner Bros. Discovery",
         role: "SE-2",
@@ -203,7 +203,7 @@ export const alumniMembers: AlumniMember[] = [
     {
         id: "alumni-21",
         name: "Manas Pratim Biswas",
-        photo: "/images/juslcc-logo.png",
+        photo: "/alumni_photos/manas_pratim_biswas.jpeg",
         graduationYear: 2024,
         company: "Jurisphere.ai",
         role: "SE",
@@ -215,7 +215,7 @@ export const alumniMembers: AlumniMember[] = [
     {
         id: "alumni-22",
         name: "Nidhi Shah",
-        photo: "/images/juslcc-logo.png",
+        photo: "/alumni_photos/nidhi_shah.jpeg",
         graduationYear: 2024,
         company: "Salesforce",
         role: "AMTS",
@@ -224,7 +224,7 @@ export const alumniMembers: AlumniMember[] = [
     {
         id: "alumni-23",
         name: "Rajdeep Mallick",
-        photo: "/images/juslcc-logo.png",
+        photo: "/alumni_photos/rajdeep_mallick.png",
         graduationYear: 2024,
         company: "Wells Fargo",
         role: "SWE",
@@ -236,7 +236,7 @@ export const alumniMembers: AlumniMember[] = [
     {
         id: "alumni-24",
         name: "Anupam Ghosh",
-        photo: "/images/juslcc-logo.png",
+        photo: "/alumni_photos/anupam_ghosh.jpeg",
         graduationYear: 2025,
         company: "Amazon",
         role: "SDE-1",
@@ -248,7 +248,7 @@ export const alumniMembers: AlumniMember[] = [
     {
         id: "alumni-25",
         name: "Anurag Kumar Jha",
-        photo: "/images/juslcc-logo.png",
+        photo: "/alumni_photos/anurag_jha.jpeg",
         graduationYear: 2025,
         company: "Increff",
         role: "SDE-1",
@@ -260,7 +260,7 @@ export const alumniMembers: AlumniMember[] = [
     {
         id: "alumni-26",
         name: "Vikash Sangai",
-        photo: "/images/juslcc-logo.png",
+        photo: "/alumni_photos/vikash_sangai.jpeg",
         graduationYear: 2025,
         company: "Amazon",
         role: "SDE-1",
