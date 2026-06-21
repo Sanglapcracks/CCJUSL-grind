@@ -25,7 +25,7 @@ const FormattedText: React.FC<{ text: string }> = ({ text }) => {
   return (
     <div className="space-y-2">
       {lines.map((line, idx) => {
-        let trimmed = line.trim();
+        const trimmed = line.trim();
         if (!trimmed) return <div key={idx} className="h-2" />;
 
         // Check if heading
