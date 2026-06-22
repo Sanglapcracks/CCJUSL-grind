@@ -8,6 +8,8 @@ import { usePathname } from "next/navigation";
 import { getAuthStatus } from "@/services/AuthService";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { FEATURES } from "@/config/features";
+
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -23,6 +25,11 @@ function Navbar() {
   const [signedIn, setSignedIn] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+
+  const visibleLinks = navLinks.filter(
+    (link) => link.href !== "/guides" || FEATURES.enableGuides
+  );
+
 
   useEffect(() => {
     setMounted(true);
@@ -89,7 +96,7 @@ function Navbar() {
             }}
           />
 
-          {navLinks.map((link, i) => (
+          {visibleLinks.map((link, i) => (
             <motion.div
               key={link.href}
               initial={{ opacity: 0, y: 20 }}
@@ -112,7 +119,7 @@ function Navbar() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.05 * navLinks.length, duration: 0.3 }}
+            transition={{ delay: 0.05 * visibleLinks.length, duration: 0.3 }}
           >
             {signedIn ? (
               <Link
@@ -164,7 +171,7 @@ function Navbar() {
 
           {/* Desktop Nav */}
           <nav className="hidden items-center gap-8 text-sm uppercase tracking-wider lg:flex xl:gap-10 xl:text-base">
-            {navLinks.map((link) => (
+            {visibleLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}

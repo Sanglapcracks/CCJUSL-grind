@@ -3,6 +3,9 @@
 import React, { useState, useMemo, useRef } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
 import { interviewGuides } from "@/data/guides";
+import { FEATURES } from "@/config/features";
+import NotFound from "@/components/NotFound";
+
 import { 
   Search, 
   FileText, 
@@ -122,6 +125,7 @@ const FormattedText: React.FC<{ text: string }> = ({ text }) => {
 
 export default function GuidesPage() {
   const [searchQuery, setSearchQuery] = useState("");
+
   const [selectedCompany, setSelectedCompany] = useState("All");
   const [selectedDept, setSelectedDept] = useState("All");
   const [selectedGuide, setSelectedGuide] = useState<InterviewGuide | null>(null);
@@ -151,6 +155,9 @@ export default function GuidesPage() {
     });
   }, [searchQuery, selectedCompany, selectedDept]);
 
+  if (!FEATURES.enableGuides) {
+    return <NotFound />;
+  }
 
   return (
     <div className="min-h-screen bg-black text-white font-jetbrains-mono selection:bg-red-500/30 selection:text-red-200">
