@@ -383,64 +383,64 @@ export const teamMembers: TeamMember[] = [
     socials: { linkedin: "https://www.linkedin.com/in/md-mirajul-seikh-undefined-325b03370?utm_source=share_via&utm_content=profile&utm_medium=member_android", github: "https://github.com/mdmirajulseikh91-oss" },
   },
 
-  //Core Team
-  // {
-  //   id: "t25",
-  //   name: "Aritra Mondal",
-  //   position: "President",
-  //   photo: "/member_photos/WhatsApp Image 2026-06-21 at 11.01.39 AM.jpeg",
-  //   team: "core",
-  //   graduationYear: 2027,
-  //   bio: "I am a passionate and hardworking individual who is dedicated to contributing to the growth and success of Code Club JUSL. I have a strong interest in technology, problem-solving, and continuous learning. My goal is to lead the club towards achieving its objectives and fostering a collaborative and innovative environment for all members.",
-  //   achievements: [
-  //     "Research Intern @IIT Bombay(ISRO), IIT Patna, IIIT Bangalore and Jadavpur University ",
-  //     "Lead Organiser of Hackforge 2026 @Srijan 2026",
-  //     "Placement Coordinator @Jadavpur University",
-  //   ],
-  //   socials: { linkedin: "https://www.linkedin.com/in/aritra-mondal-b6712b28a/", github: "https://github.com/aritra-mondal-it" },
-  // },
-  // {
-  //   id: "t7",
-  //   name: "Rahul Pandey",
-  //   position: "Vice President",
-  //   photo: "/member_photos/img-20260505-wa0012-rahul-pandey.jpg",
-  //   team: "core",
-  //   graduationYear: 2027,
-  //   bio: "Full Stack Dev and Machine Learning Enthusiast",
-  //   achievements: [
-  //     "Internship at Wells Fargo",
-  //     "Made the Sherlocked'26 competition app",
-  //     "HackForge 2025 Winner",
-  //   ],
-  //   socials: { linkedin: "https://www.linkedin.com/in/rahul-pandey2005", github: "https://github.com/rahul-p19" },
-  // },
-  // {
-  //   id: "t13",
-  //   name: "Ankit Kundu",
-  //   position: "Treasurer",
-  //   photo: "/member_photos/20251222-153321-1-ankit-kundu.jpg",
-  //   team: "core",
-  //   graduationYear: 2027,
-  //   bio: "I have a lot of interest in competitive programming, but I often fall short in contests. Proudly. I am an amateur CP coder.",
-  //   achievements: [
-  //     "Internship at Sprinklr"
-  //   ],
-  //   socials: { linkedin: "https://www.linkedin.com/in/ankit-kundu-50522a2b2", github: "https://github.com/ankitkundu837" },
-  // },
-  // {
-  //   id: "t10",
-  //   name: "Swarnendu Banerjee",
-  //   position: "Treasurer",
-  //   photo: "/member_photos/img-20250912-wa0042-swarnendu-banerjee.jpg",
-  //   team: "core",
-  //   graduationYear: 2027,
-  //   bio: "Passionate about building scalable and reliable software systems, exploring distributed architectures, cloud technologies, observability, automation, and AI-driven solutions to improve system performance and reliability.",
-  //   achievements: [
-  //     "Winner at Hacktropica(MLH)",
-  //     "4th position in COMSYS Hackathon IV",
-  //     "Guardian@Leetcode",
-  //     "Internship at PayPal"
-  //   ],
-  //   socials: { linkedin: "https://www.linkedin.com/in/swarnendu-banerjee-78aa49298/", github: "https://github.com/Pookie-n-Rookie" },
-  // },
+  Core Team
+  {
+    id: "t25",
+    name: "Aritra Mondal",
+    position: "President",
+    photo: "/member_photos/WhatsApp Image 2026-06-21 at 11.01.39 AM.jpeg",
+    team: "core",
+    graduationYear: 2027,
+    bio: "I am a passionate and hardworking individual who is dedicated to contributing to the growth and success of Code Club JUSL. I have a strong interest in technology, problem-solving, and continuous learning. My goal is to lead the club towards achieving its objectives and fostering a collaborative and innovative environment for all members.",
+    achievements: [
+      "Research Intern @IIT Bombay(ISRO), IIT Patna, IIIT Bangalore and Jadavpur University ",
+      "Lead Organiser of Hackforge 2026 @Srijan 2026",
+      "Placement Coordinator @Jadavpur University",
+    ],
+    socials: { linkedin: "https://www.linkedin.com/in/aritra-mondal-b6712b28a/", github: "https://github.com/aritra-mondal-it" },
+  },
+  {
+    id: "t7",
+    name: "Rahul Pandey",
+    position: "Vice President",
+    photo: "/member_photos/img-20260505-wa0012-rahul-pandey.jpg",
+    team: "core",
+    graduationYear: 2027,
+    bio: "Full Stack Dev and Machine Learning Enthusiast",
+    achievements: [
+      "Internship at Wells Fargo",
+      "Made the Sherlocked'26 competition app",
+      "HackForge 2025 Winner",
+    ],
+    socials: { linkedin: "https://www.linkedin.com/in/rahul-pandey2005", github: "https://github.com/rahul-p19" },
+  },
+  {
+    id: "t13",
+    name: "Ankit Kundu",
+    position: "Treasurer",
+    photo: "/member_photos/20251222-153321-1-ankit-kundu.jpg",
+    team: "core",
+    graduationYear: 2027,
+    bio: "I have a lot of interest in competitive programming, but I often fall short in contests. Proudly. I am an amateur CP coder.",
+    achievements: [
+      "Internship at Sprinklr"
+    ],
+    socials: { linkedin: "https://www.linkedin.com/in/ankit-kundu-50522a2b2", github: "https://github.com/ankitkundu837" },
+  },
+  {
+    id: "t10",
+    name: "Swarnendu Banerjee",
+    position: "Treasurer",
+    photo: "/member_photos/img-20250912-wa0042-swarnendu-banerjee.jpg",
+    team: "core",
+    graduationYear: 2027,
+    bio: "Passionate about building scalable and reliable software systems, exploring distributed architectures, cloud technologies, observability, automation, and AI-driven solutions to improve system performance and reliability.",
+    achievements: [
+      "Winner at Hacktropica(MLH)",
+      "4th position in COMSYS Hackathon IV",
+      "Guardian@Leetcode",
+      "Internship at PayPal"
+    ],
+    socials: { linkedin: "https://www.linkedin.com/in/swarnendu-banerjee-78aa49298/", github: "https://github.com/Pookie-n-Rookie" },
+  },
 ];
