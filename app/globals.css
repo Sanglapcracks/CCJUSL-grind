@@ -85,3 +85,17 @@ button {
   scrollbar-width: thin;
   scrollbar-color: #262626 #000000;
 }
+
+/* ── Shiny Text sweep effect ── */
+@keyframes shine {
+  0% {
+    background-position: 200% center;
+  }
+  100% {
+    background-position: -200% center;
+  }
+}
+
+@utility animate-shine {
+  animation: shine 6s linear infinite;
+}

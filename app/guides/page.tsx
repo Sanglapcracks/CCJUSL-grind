@@ -7,14 +7,15 @@ import {
   Search,
   FileText,
   Briefcase,
-  Download,
-  Building,
-  Users,
   X
 } from "lucide-react";
 import Footer from "@/components/Footer";
 import { FEATURES } from "@/config/features";
 import NotFound from "@/components/NotFound";
+import DecryptText from "@/components/ui/DecryptText";
+import ShinyText from "@/components/ui/ShinyText";
+import Magnet from "@/components/ui/Magnet";
+import FolderCard from "@/components/ui/FolderCard";
 
 // Brand-specific metadata for dynamic, premium styling
 const companyMetadata: Record<string, {
@@ -135,16 +136,19 @@ export default function GuidesPage() {
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/[0.02] mb-6 backdrop-blur-md cursor-default"
           >
             <Briefcase size={14} className="text-red-500" />
-            <span className="text-xs font-semibold uppercase tracking-widest text-white/80">Ace Your Placement & Internships</span>
+            <ShinyText text="Ace Your Placement & Internships" className="text-xs font-semibold uppercase tracking-widest text-white/80" />
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={isHeaderInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5 }}
-            className="text-4xl font-semibold uppercase tracking-tight text-white sm:text-5xl md:text-6xl"
+            className="text-4xl font-semibold uppercase tracking-tight text-white sm:text-5xl md:text-6xl cursor-default"
           >
-            Interview <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-400">Guides</span>
+            <DecryptText text="Interview" animateOnHover speed={40} />{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-400">
+              <DecryptText text="Guides" animateOnHover speed={40} delay={150} />
+            </span>
           </motion.h1>
 
           <motion.div
@@ -153,7 +157,7 @@ export default function GuidesPage() {
             transition={{ duration: 0.5, delay: 0.3 }}
             className="mx-auto mt-6 max-w-2xl text-sm leading-relaxed text-white/50"
           >
-            Download official, compiled company interview guides. Read about preparation strategies, online assessment questions, and technical/HR round experiences shared by your seniors.
+            Download official, compiled company interview guides. Read about preparation strategies, online assessment questions, and technical/HR round experiences shared by students.
           </motion.div>
         </div>
 
@@ -173,12 +177,14 @@ export default function GuidesPage() {
               className="w-full pl-12 pr-10 py-2.5 text-sm bg-[#0a0a0a] border border-white/10 rounded-xl text-white placeholder-white/30 outline-none focus:border-white/30 focus:bg-white/[0.02] transition-all duration-300"
             />
             {searchQuery && (
-              <button
-                onClick={() => setSearchQuery("")}
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-white/30 hover:text-white transition-colors"
-              >
-                <X size={14} />
-              </button>
+              <Magnet className="absolute right-3.5 top-[30%] flex items-center justify-center" magnetStrength={0.2}>
+                <button
+                  onClick={() => setSearchQuery("")}
+                  className="text-white/30 hover:text-white transition-colors cursor-pointer p-1"
+                >
+                  <X size={14} />
+                </button>
+              </Magnet>
             )}
           </div>
         </div>
@@ -188,7 +194,7 @@ export default function GuidesPage() {
           {filteredCompanyGuides.length > 0 ? (
             <motion.div
               layout
-              className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+              className="grid gap-6 gap-y-16 lg:gap-y-20 sm:grid-cols-2 lg:grid-cols-3"
             >
               {filteredCompanyGuides.map((guide, idx) => {
                 const meta = companyMetadata[guide.company] || defaultMeta;
@@ -201,70 +207,15 @@ export default function GuidesPage() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.4, delay: Math.min(idx * 0.05, 0.3) }}
-                    style={{ "--card-glow": meta.bgGlow } as React.CSSProperties}
-                    className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-white/5 bg-[#0a0a0a] p-6 transition-all duration-500 hover:-translate-y-1 hover:border-white/10 hover:shadow-[0_12px_40px_var(--card-glow)] z-10 hover:z-20"
+                    className="z-10"
                   >
-                    {/* Top Accent Line */}
-                    <div className={`absolute top-0 left-0 h-[2px] w-full bg-gradient-to-r ${meta.gradientLine} opacity-40 transition-opacity duration-500 group-hover:opacity-100`} />
-                    
-                    {/* Background Watermark Letter */}
-                    <div 
-                      className="absolute -bottom-8 -right-4 text-[180px] font-black select-none pointer-events-none opacity-[0.02] group-hover:opacity-[0.04] group-hover:scale-105 group-hover:-translate-x-2 group-hover:-translate-y-2 transition-all duration-700 ease-out leading-none"
-                    >
-                      {meta.initial}
-                    </div>
-
-                    <div className="relative z-10">
-                      {/* Header Elements */}
-                      <div className="flex items-center justify-between mb-5">
-                        <div className="flex items-center gap-2 px-3 py-1.5 rounded bg-white/[0.03] border border-white/5">
-                          <Building size={14} className={meta.color} />
-                          <span className="text-xs font-bold tracking-widest uppercase text-white">{guide.company}</span>
-                        </div>
-
-                        <div className="flex items-center gap-1.5 px-3 py-1.5 rounded bg-white/[0.03] border border-white/5 text-white/70">
-                          <FileText size={12} className={meta.color} />
-                          <span className="text-[10px] font-bold tracking-widest uppercase">{guide.count} Exp</span>
-                        </div>
-                      </div>
-
-                      {/* Description */}
-                      <p className="text-xs leading-relaxed text-white/50 mb-6 min-h-[50px] group-hover:text-white/70 transition-colors duration-300 pr-4">
-                        Complete preparation guide compiled from real technical interviews, coding challenges, and HR rounds.
-                      </p>
-
-                      {/* Contributors */}
-                      <div className="mt-6">
-                        <div className="flex items-center gap-2 mb-3">
-                          <Users size={12} className={meta.color} />
-                          <span className="text-[10px] font-bold tracking-widest uppercase text-white/40">Seniors Interviewed</span>
-                        </div>
-                        <div className="flex flex-wrap gap-2">
-                          {guide.contributors.map((name) => (
-                            <span 
-                              key={name} 
-                              className="px-2.5 py-1 rounded bg-white/[0.03] border border-white/5 text-[11px] text-white/50 font-medium transition-colors hover:bg-white/[0.08] hover:text-white cursor-default"
-                            >
-                              {name}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Download Button */}
-                    <div className="mt-8 pt-5 border-t border-white/5 relative z-10">
-                      <a
-                        href={guide.pdfPath}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`group/btn flex w-full items-center justify-center gap-2 rounded-xl border bg-white/[0.02] py-3 text-xs font-bold uppercase tracking-widest text-white transition-all duration-300 ${meta.buttonClass}`}
-                      >
-                        <Download size={16} className={`transition-transform duration-300 group-hover/btn:translate-y-0.5 ${meta.color}`} />
-                        Download PDF Guide
-                      </a>
-                    </div>
-
+                    <FolderCard
+                      company={guide.company}
+                      count={guide.count}
+                      contributors={guide.contributors}
+                      pdfPath={guide.pdfPath}
+                      meta={meta}
+                    />
                   </motion.div>
                 );
               })}
