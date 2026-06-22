@@ -277,7 +277,7 @@ export const alumniMembers: AlumniMember[] = [
         name: "Anupam Ghosh",
         photo: "/alumni_photos/anupam_ghosh.jpeg",
         graduationYear: 2025,
-        company: "Amazon",
+        company: "Increff",
         role: "SDE-1",
         socials: {
             linkedin: "https://www.linkedin.com/in/anupam--ghosh/",
@@ -289,7 +289,7 @@ export const alumniMembers: AlumniMember[] = [
         name: "Anurag Kumar Jha",
         photo: "/alumni_photos/anurag_jha.jpeg",
         graduationYear: 2025,
-        company: "Increff",
+        company: "Amazon",
         role: "SDE-1",
         socials: {
             linkedin: "https://www.linkedin.com/in/anurag-jha-600967225/",

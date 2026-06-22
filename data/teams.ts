@@ -45,7 +45,7 @@ export const teamMembers: TeamMember[] = [
   },
   {
     id: "t5",
-    name: "Soumyadeep Roy Chowdhur",
+    name: "Soumyadeep Roy Chowdhury",
     position: "PR Coordinator",
     photo: "/member_photos/src.jpeg", 
     team: "pr",
@@ -245,7 +245,33 @@ export const teamMembers: TeamMember[] = [
     ],
     socials: { linkedin: "https://www.linkedin.com/in/neelim-goswami-064919283?utm_source=share_via&utm_content=profile&utm_medium=member_android", github: "https://github.com/goswamineelim" },
   },
-
+  {
+    id: "t13",
+    name: "Monidip Das",
+    position: "CP Coordinator", 
+    photo: "/member_photos/IMG_20260622_130056 - Monidip Das.jpg",
+    team: "cp",
+    graduationYear: 2028,
+    bio: "I am an Expert on Codeforces and an ICPC Asia West Regionalist. ",
+    socials: { linkedin: "https://www.linkedin.com/in/monidipdas2005", github: "https://github.com/MonidipDas" }
+  },
+  {
+    id: "t28",
+    name: "Soumadip Mishra",
+    position: "CP Coordinator",
+    photo: "/member_photos/IMG20260529155952 - Soumadip Mishra.jpg",
+    team: "cp",
+    graduationYear: 2028,
+    bio: "I am an Information Technology undergraduate student at Jadavpur University with a deep-seated passion for advanced data structures and complex algorithmic problem-solving. As a high-tier competitive programmer, I specialize in parsing ambiguous problem constraints and translating mathematical logic into clean, highly optimized code under tight time limitations. I enjoy the intense collaboration of team contests, where strategic problem distribution and collective debugging are key to climbing the leaderboard. ",
+    socials: { linkedin: "https://www.linkedin.com/in/soumadip-mishra-4b6875326/", github: "https://github.com/Soumadip-Mishra" },
+    achievements: [
+      "ICPC Asia-West Regionalist: Qualified and competed at the regional level, securing a Preliminary Rank of 120, Chennai Rank of 46, and Amritapuri Rank of 145.",  
+      "LeetCode Guardian: Achieved a peak competitive rating of 2360, placing in the Top 0.4% of coders globally with over 1400 problems solved.",  
+      "Codeforces Expert & CodeChef 5★: Attained an Expert ranking on Codeforces (1820 peak rating) and a 5-Star tier on CodeChef (2081 peak rating). ",
+      "H42 Contest Leader: Led a 3-member team to secure Rank 3 in 2025 and captured Rank 1 in 2026 at Jadavpur University’s premier inter-college coding contest.",
+      "Global Rank 1: Clinched the absolute 1st Rank globally in GeeksforGeeks Weekly Contest 2026."
+    ],
+  },
   // Logistics Team
   {
     id: "t16",
