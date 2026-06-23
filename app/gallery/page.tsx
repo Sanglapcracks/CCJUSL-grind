@@ -95,15 +95,15 @@ export default function GalleryPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-4xl font-black uppercase tracking-wider bg-gradient-to-r from-red-500 via-orange-400 to-yellow-500 bg-clip-text text-transparent sm:text-5xl md:text-6xl"
+          className="text-center text-4xl font-semibold uppercase tracking-tight bg-gradient-to-r from-rose-500 to-rose-300 bg-clip-text text-transparent sm:text-5xl md:text-6xl lg:text-7xl"
         >
           Gallery
         </motion.h1>
         <motion.div
           initial={{ scaleX: 0 }}
           animate={isInView ? { scaleX: 1 } : {}}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mx-auto mt-4 h-1 w-20 origin-center rounded-full bg-gradient-to-r from-red-500 to-orange-500"
+          transition={{ type: "spring", stiffness: 85, damping: 15, delay: 0.2 }}
+          className="mx-auto mt-4 h-px w-24 origin-center bg-gradient-to-r from-rose-500 to-rose-300"
         />
         <p className="mt-4 text-neutral-400 max-w-md mx-auto text-xs sm:text-sm px-4">
           Glimpses of hackathons, coding showdowns, and technical milestones at CodeClub JUSL.
@@ -119,7 +119,7 @@ export default function GalleryPage() {
               onClick={() => setActiveCategory(category.key)}
               className={`px-4 py-2 rounded-xl text-xs font-medium tracking-wide transition-all duration-300 uppercase ${
                 activeCategory === category.key
-                  ? "bg-gradient-to-r from-red-600 to-orange-500 text-white shadow-lg shadow-orange-900/30 font-semibold"
+                  ? "bg-gradient-to-r from-rose-600 to-rose-400 text-white shadow-lg shadow-rose-950/30 font-semibold"
                   : "text-neutral-400 hover:text-neutral-200 hover:bg-neutral-800/50"
               }`}
             >
@@ -161,14 +161,14 @@ export default function GalleryPage() {
                 </div>
 
                 {/* Contextual Category Tag badge */}
-                <span className="absolute top-3 left-3 bg-neutral-950/80 backdrop-blur-md border border-neutral-800 px-2 py-0.5 rounded text-[9px] font-bold tracking-wider uppercase text-orange-400 shadow-sm">
+                <span className="absolute top-3 left-3 bg-neutral-950/80 backdrop-blur-md border border-neutral-800 px-2 py-0.5 rounded text-[9px] font-bold tracking-wider uppercase text-rose-400 shadow-sm">
                   {item.category.replace("-", " ")}
                 </span>
 
                 {/* Elegant Smooth Overlay Slide & Reveal */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
                   <p className="text-xs font-semibold tracking-wide text-neutral-400 uppercase mb-1 flex items-center gap-1">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 text-rose-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5-5-5m5 5v-4m0 4h-4" />
                     </svg>
                     Expand Image
@@ -283,7 +283,7 @@ export default function GalleryPage() {
 
               {/* Data Text Meta Display Footer */}
               <div className="bg-neutral-900/90 border-t border-neutral-800/80 px-6 py-5 backdrop-blur-md">
-                <p className="text-sm font-semibold text-orange-400 tracking-wide uppercase mb-1 text-[10px]">
+                <p className="text-sm font-semibold text-rose-400 tracking-wide uppercase mb-1 text-[10px]">
                   {lightboxItem.category.replace("-", " ")}
                 </p>
                 <p className="text-sm leading-relaxed text-neutral-200 font-medium">
