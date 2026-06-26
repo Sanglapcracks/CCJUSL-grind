@@ -368,5 +368,27 @@ export const interviewGuides: InterviewGuide[] = [
     "experience": "Compiled interview experiences across companies for the 26 Batch, featuring details for D.E. Shaw technical and HR rounds shared by contributors Somyal Sinha, Atmik Goswami, and Satwik Biswas.",
     "prepTips": "Prepare core systems concepts, database design, computer networks, and DSA topics. Be ready to explain your coding solutions and complexity analysis in detail.",
     "selected": true
+  },
+  {
+    "id": "hsbc-aritra-chatterjee",
+    "candidateName": "Aritra Chatterjee",
+    "department": "Computer Science & Engineering",
+    "yearOfGrad": 2027,
+    "company": "HSBC",
+    "pdfPath": "/guides/27 Batch Interview Experiences/HSBC_SWE_Intern_Guide_CCJUSL.pdf",
+    "experience": "Round 1: Aptitude (2 hours)\nThe process began with the Aptitude round (28th Sept) which consisted of English, Maths, Mental Ability and Situation-based questions. Questions were of easy level and almost all the people who gave this round were shortlisted.\n\nRound 2: Codility (100 minutes)\nThis was followed by the Codility round (29th Sept) which consisted of 3 DSA questions of LC Easy to Medium difficulty. Around 10 people were shortlisted for the interview.\n\nRound 3: Technical Interview (30 minutes)\nThe Technical Interview began with an introduction of myself and about my previous internship. This was followed by 2 DSA questions: Palindrome checking and a question on gym membership. This was followed by some basic questions on React (React Router, React DOM, lazy loading) and basic OOPs (abstract class, composition).\n\nRound 4: HR Round (5-7 minutes)\nCultural fit check: location preferences, skill utilization. All 3 shortlisted candidates selected.",
+    "prepTips": "HSBC focuses a lot on your CV. Make sure you know your CV from the bottom up. Knowing the basics of Web development / ML and CS fundamentals (as mentioned in your CV) is more than sufficient for cracking an intern at HSBC. The DSA questions asked were also of LC Easy to Medium type. Make sure to go through the DSA questions asked in the coding round just in case.",
+    "selected": true
+  },
+  {
+    "id": "pwc-rishika-sur",
+    "candidateName": "Rishika Sur",
+    "department": "Information Technology",
+    "yearOfGrad": 2027,
+    "company": "PwC",
+    "pdfPath": "/guides/27 Batch Interview Experiences/PwC_TechConsultant_Intern_Guide_CCJUSL.pdf",
+    "experience": "Round 1: Technical Interview (15–20 minutes)\nAsked situational questions. Since the interviewer worked in Support, questions were mostly based on alerting systems and how to handle complaints (e.g. lift alerting system priority implementation, client website slowness diagnosis). Basic questions about APIs, alerting systems, hobbies, and career goals.\n\nRound 2: Technical/Partner Round\nFurther situational check, puzzles, and brain teasers.\n\nRound 3: HR Round (7–10 minutes)\nGrade cards verification for all 4 semesters. Travel openness, passport verification, stipend confirmation. Conversation on family and hobbies.",
+    "prepTips": "DSA is a must for all tech companies (though the Online Assessment for PwC was pure aptitude). Practice solving problems with a timer on. Solve basic arithmetic and geometry problems as fast as you can. Main topics on which OA questions were based: ratio/proportion and interest. Study your resume thoroughly — treat it like a subject of its own. Know your projects well and keep some mental notes on unique features and features you haven't added.",
+    "selected": true
   }
 ];
