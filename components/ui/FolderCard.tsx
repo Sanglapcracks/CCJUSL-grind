@@ -247,7 +247,7 @@ export default function FolderCard({
           } ${isHovered ? brand.borderHover : brand.border}`}
         >
           <Building size={13} className={`transition-colors duration-500 ${isHovered ? brand.text : "text-neutral-500"}`} />
-          <span className="text-[10px] font-mono font-medium uppercase tracking-[0.2em] text-neutral-300">
+          <span className="text-[10px] font-mono font-medium uppercase tracking-[0.2em] text-neutral-300 truncate max-w-[180px] sm:max-w-none">
             {company}
           </span>
         </div>
@@ -295,10 +295,17 @@ export default function FolderCard({
             ) : (
               <FileText size={isParent ? 28 : 24} strokeWidth={1.5} className={`mb-2 ${brand.text} opacity-80`} />
             )}
-            <h3 className={`font-display font-semibold text-white tracking-tight mb-1 ${isParent ? "text-base mt-1" : "text-sm"}`}>
-              {onClick ? `${company} Experiences` : `${company} Interview Kit`}
+            <h3 className={`font-display font-semibold text-white tracking-tight mb-1 ${
+              isParent ? "text-sm sm:text-base mt-1" : "text-xs sm:text-sm"
+            }`}>
+              {onClick 
+                ? (company.endsWith("Experiences") ? company : `${company} Experiences`) 
+                : `${company} Interview Kit`
+              }
             </h3>
-            <p className={`font-body text-neutral-400 font-normal leading-snug max-w-[220px] ${isParent ? "text-xs px-2" : "text-[11px]"}`}>
+            <p className={`font-body text-neutral-400 font-normal leading-snug max-w-[220px] ${
+              isParent ? "text-[11px] sm:text-xs px-2" : "text-[10px] sm:text-[11px]"
+            }`}>
               {onClick 
                 ? "Click to open this batch and view specific company interview experiences."
                 : "Click to view the full PDF containing coding challenges and HR strategies."
@@ -375,7 +382,7 @@ export default function FolderCard({
             y: watermarkY,
             z: -10,
           }}
-          className={`absolute bottom-2 right-4 text-[75px] font-display font-black select-none pointer-events-none transition-all duration-500 ease-out leading-none z-0 ${
+          className={`absolute bottom-2 right-4 text-[55px] sm:text-[75px] font-display font-black select-none pointer-events-none transition-all duration-500 ease-out leading-none z-0 ${
             isHovered ? "opacity-25 scale-110" : "opacity-12"
           }`}
         >
@@ -395,7 +402,9 @@ export default function FolderCard({
           }}
         >
           <div className="flex justify-between items-start w-full">
-            <h2 className={`font-display font-semibold italic tracking-tight bg-gradient-to-r from-white via-white to-neutral-400 bg-clip-text text-transparent pb-1 pr-3 ${isParent ? "text-2xl" : "text-xl"}`}>
+            <h2 className={`font-display font-semibold italic tracking-tight bg-gradient-to-r from-white via-white to-neutral-400 bg-clip-text text-transparent pb-1 pr-3 ${
+              isParent ? "text-xl sm:text-2xl" : "text-lg sm:text-xl"
+            }`}>
               {company}
             </h2>
             <div className="flex items-center gap-1.5 px-2 py-1 rounded-full bg-white/5 border border-white/10 text-white backdrop-blur-md mt-1">
@@ -410,7 +419,9 @@ export default function FolderCard({
             className="flex flex-col justify-center flex-1 mt-3 border-l-2 pl-3 transition-all duration-500"
             style={{ borderLeftColor: isHovered ? brand.colorHex : "rgba(255, 255, 255, 0.15)" }}
           >
-            <p className={`font-body text-white/95 leading-relaxed font-medium pr-2 ${isParent ? "text-[13px]" : "text-[12px]"}`}>
+            <p className={`font-body text-white/95 leading-relaxed font-medium pr-2 ${
+              isParent ? "text-xs sm:text-[13px]" : "text-[11px] sm:text-[12px]"
+            }`}>
               {customDescription || "Complete preparation guide containing online assessments, technical rounds, and interview experiences."}
             </p>
           </div>
@@ -433,7 +444,7 @@ export default function FolderCard({
       <button
         onClick={onClick}
         type="button"
-        className={`block relative mt-8 pt-1 group w-full outline-none text-left ${
+        className={`block relative mt-8 pt-1 group w-full max-w-[340px] mx-auto outline-none text-left ${
           isParent ? "h-[370px]" : "h-[310px]"
         }`}
         style={{
@@ -451,7 +462,7 @@ export default function FolderCard({
       href={pdfPath}
       target="_blank"
       rel="noopener noreferrer"
-      className={`block relative mt-8 pt-1 group w-full outline-none ${
+      className={`block relative mt-8 pt-1 group w-full max-w-[340px] mx-auto outline-none ${
         isParent ? "h-[370px]" : "h-[310px]"
       }`}
       style={{
