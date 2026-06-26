@@ -228,6 +228,21 @@ export default function FolderCard({
     y.set(0.5);
   };
 
+  const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    const isKeyboard = e.clientX === 0 && e.clientY === 0;
+    const clickX = isKeyboard ? 0.5 : (e.clientX - rect.left) / rect.width;
+    const clickY = isKeyboard ? 0.5 : (e.clientY - rect.top) / rect.height;
+
+    x.set(clickX);
+    y.set(clickY);
+    setPosition({
+      x: isKeyboard ? rect.width / 2 : e.clientX - rect.left,
+      y: isKeyboard ? rect.height / 2 : e.clientY - rect.top,
+    });
+  };
+
   let brand = brandBorders[company] || defaultBrand;
   if (company.includes("Batch")) {
     brand = {
@@ -248,6 +263,7 @@ export default function FolderCard({
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={handleMouseLeave}
+      onPointerDown={handlePointerDown}
       style={{
         rotateX,
         rotateY,
@@ -495,46 +511,21 @@ export default function FolderCard({
     return (
       <button
         onClick={(e) => {
-          if (!cardRef.current) return;
-          const rect = cardRef.current.getBoundingClientRect();
-          const native = e.nativeEvent as unknown as {
-            touches?: ArrayLike<{ clientX: number; clientY: number }>;
-            changedTouches?: ArrayLike<{ clientX: number; clientY: number }>;
-          };
-          
-          let clientX = e.clientX;
-          let clientY = e.clientY;
-          
-          if (native.touches && native.touches.length > 0) {
-            clientX = native.touches[0].clientX;
-            clientY = native.touches[0].clientY;
-          } else if (native.changedTouches && native.changedTouches.length > 0) {
-            clientX = native.changedTouches[0].clientX;
-            clientY = native.changedTouches[0].clientY;
-          }
-
-          const isKeyboard = clientX === 0 && clientY === 0;
-          const clickX = isKeyboard ? 0.5 : (clientX - rect.left) / rect.width;
-          const clickY = isKeyboard ? 0.5 : (clientY - rect.top) / rect.height;
-          
-          x.set(clickX);
-          y.set(clickY);
-          setPosition({
-            x: isKeyboard ? rect.width / 2 : clientX - rect.left,
-            y: isKeyboard ? rect.height / 2 : clientY - rect.top,
-          });
-
-          if (!isActive) {
-            e.preventDefault();
-            e.stopPropagation();
-            setIsActive(true);
-            document.dispatchEvent(new CustomEvent("close-folder-cards", { detail: cardRef.current }));
+          if (isTouch) {
+            if (!isActive) {
+              e.preventDefault();
+              e.stopPropagation();
+              setIsActive(true);
+              document.dispatchEvent(new CustomEvent("close-folder-cards", { detail: cardRef.current }));
+            } else {
+              onClick();
+            }
           } else {
             onClick();
           }
         }}
         type="button"
-        className={`block relative mt-8 pt-1 group w-full max-w-[310px] sm:max-w-[340px] mx-auto outline-none text-left ${
+        className={`block relative mt-8 pt-1 group w-full max-w-[310px] sm:max-w-[340px] mx-auto outline-none text-left overflow-visible ${
           isParent ? "h-[370px]" : "h-[310px]"
         }`}
         style={{
@@ -553,45 +544,18 @@ export default function FolderCard({
       target="_blank"
       rel="noopener noreferrer"
       onClick={(e) => {
-        if (!cardRef.current) return;
-        const rect = cardRef.current.getBoundingClientRect();
-        const native = e.nativeEvent as unknown as {
-          touches?: ArrayLike<{ clientX: number; clientY: number }>;
-          changedTouches?: ArrayLike<{ clientX: number; clientY: number }>;
-        };
-        
-        let clientX = e.clientX;
-        let clientY = e.clientY;
-        
-        if (native.touches && native.touches.length > 0) {
-          clientX = native.touches[0].clientX;
-          clientY = native.touches[0].clientY;
-        } else if (native.changedTouches && native.changedTouches.length > 0) {
-          clientX = native.changedTouches[0].clientX;
-          clientY = native.changedTouches[0].clientY;
-        }
-
-        const isKeyboard = clientX === 0 && clientY === 0;
-        const clickX = isKeyboard ? 0.5 : (clientX - rect.left) / rect.width;
-        const clickY = isKeyboard ? 0.5 : (clientY - rect.top) / rect.height;
-        
-        x.set(clickX);
-        y.set(clickY);
-        setPosition({
-          x: isKeyboard ? rect.width / 2 : clientX - rect.left,
-          y: isKeyboard ? rect.height / 2 : clientY - rect.top,
-        });
-
-        if (!isActive) {
-          e.preventDefault();
-          e.stopPropagation();
-          setIsActive(true);
-          document.dispatchEvent(new CustomEvent("close-folder-cards", { detail: cardRef.current }));
-        } else {
-          // Second click opens the PDF guide
+        if (isTouch) {
+          if (!isActive) {
+            e.preventDefault();
+            e.stopPropagation();
+            setIsActive(true);
+            document.dispatchEvent(new CustomEvent("close-folder-cards", { detail: cardRef.current }));
+          } else {
+            // Second click opens the PDF guide
+          }
         }
       }}
-      className={`block relative mt-8 pt-1 group w-full max-w-[310px] sm:max-w-[340px] mx-auto outline-none ${
+      className={`block relative mt-8 pt-1 group w-full max-w-[310px] sm:max-w-[340px] mx-auto outline-none overflow-visible ${
         isParent ? "h-[370px]" : "h-[310px]"
       }`}
       style={{
