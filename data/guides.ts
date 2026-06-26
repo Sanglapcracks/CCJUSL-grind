@@ -348,18 +348,6 @@ export const interviewGuides: InterviewGuide[] = [
     "selected": true
   },
   {
-    "id": "google-compiled-26",
-    "candidateName": "Sumit De, Debapriya Ghosh, Irfan Habeeb, Soumyadipto Pal",
-    "department": "Computer Science & Engineering",
-    "yearOfGrad": 2026,
-    "company": "Google",
-    "pdfPath": "/guides/26 Batch Interview Experiences/Google/INTERVIEW EXPERIENCES 26.pdf",
-    "experience": "Compiled interview experiences across companies for the 26 Batch, featuring details for Google technical and HR rounds shared by contributors Sumit De, Debapriya Ghosh, Irfan Habeeb Gazi, Soumyadipto Pal, Brahmajit Ray, Sristi Dakua, Deepchika Bhutia, Vivek Halder, Syamantak Sengupta, Arif Rahman, Swastik Chatterjee, and Subhadeep Dey.",
-    "prepTips": "Thoroughly practice problem-solving across core topics (Graphs, Trees, DSU, DP, Recursion) and focus on verbal communication of your thought process during dry runs.",
-    "selected": true
-  },
-
-  {
     "id": "goldman-sachs-md.-adil-26",
     "candidateName": "Md. Adil",
     "department": "Computer Science & Engineering",
