@@ -2,7 +2,7 @@
 
 import React, { useRef, useState, useEffect } from "react";
 import { motion, useMotionValue, useSpring, useTransform, animate } from "framer-motion";
-import { Building, FileText, Download, Users, ArrowRight } from "lucide-react";
+import { Building, FileText, Download, ArrowRight } from "lucide-react";
 import Magnet from "./Magnet";
 
 interface FolderCardProps {

@@ -2,8 +2,7 @@
 
 import React, { useRef, useState, useEffect } from "react";
 import { motion, useMotionValue, useSpring, useTransform, animate } from "framer-motion";
-import { Building, FileText, Download, Users, ArrowRight } from "lucide-react";
-import Magnet from "./Magnet";
+import { Building, FileText } from "lucide-react";
 
 interface PdfInfo {
   title: string;
@@ -255,7 +254,7 @@ export default function MultiPdfFolderCard({
     });
   };
 
-  let brand = brandBorders[company] || defaultBrand;
+  const brand = brandBorders[company] || defaultBrand;
 
   return (
     <button
@@ -341,13 +340,12 @@ export default function MultiPdfFolderCard({
           const isAnyFocused = hoveredPdfIndex !== null;
           const isDimmed = isAnyFocused && !isFocused;
 
-          const fanRotate = showHoverState ? (isLeft ? -12 : 12) : 0;
-          const fanX = showHoverState ? (isLeft ? -110 : 110) : 0;
+          const fanRotate = showHoverState ? (isLeft ? -10 : 10) : 0;
           const fanY = showHoverState ? (isParent ? -135 : -115) : (isParent ? 50 : 42);
 
-          // 3D V-reveal animation parameters
+          // 3D V-reveal animation parameters with clean depth stacking
           const targetX = showHoverState 
-            ? (isFocused ? (isLeft ? -65 : 65) : (isLeft ? -110 : 110)) 
+            ? (isFocused ? (isLeft ? -60 : 60) : (isLeft ? -110 : 110)) 
             : 0;
 
           const targetY = showHoverState 
@@ -359,11 +357,11 @@ export default function MultiPdfFolderCard({
             : 0;
 
           const targetRotateY = showHoverState 
-            ? (isFocused ? 0 : (isLeft ? 25 : -25)) 
+            ? (isFocused ? 0 : (isLeft ? 15 : -15)) 
             : 0;
 
           const targetZ = showHoverState 
-            ? (isFocused ? 160 : (isDimmed ? 15 : (isLeft ? 45 : 50))) 
+            ? (isFocused ? 160 : (isDimmed ? 15 : (isLeft ? 35 : 55))) 
             : 20;
 
           const targetScale = showHoverState 
@@ -371,7 +369,7 @@ export default function MultiPdfFolderCard({
             : 0.96;
 
           const targetOpacity = showHoverState 
-            ? (isDimmed ? 0.25 : 1) 
+            ? (isDimmed ? 0.15 : 1) 
             : 1;
 
           const targetZIndex = showHoverState 
@@ -400,7 +398,7 @@ export default function MultiPdfFolderCard({
                 zIndex: targetZIndex,
               }}
               transition={{ type: "spring", stiffness: 120, damping: 20, delay: showHoverState ? (isLeft ? 0 : 0.05) : 0 }}
-              className={`absolute left-[3%] w-[94%] bg-[#1a1a1a] border border-white/10 border-t-white/25 rounded-xl p-4 flex flex-col justify-between shadow-2xl transition-all duration-300 cursor-pointer ${
+              className={`absolute left-[8%] w-[84%] bg-[#1a1a1a] border border-white/10 border-t-white/25 rounded-xl p-4 flex flex-col justify-between shadow-2xl transition-all duration-300 cursor-pointer ${
                 isParent ? "h-[275px]" : "h-[230px]"
               } hover:border-white/30`}
               style={{
