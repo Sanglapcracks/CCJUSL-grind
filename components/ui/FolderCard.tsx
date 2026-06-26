@@ -497,15 +497,18 @@ export default function FolderCard({
         onClick={(e) => {
           if (!cardRef.current) return;
           const rect = cardRef.current.getBoundingClientRect();
-          const native = e.nativeEvent as any;
+          const native = e.nativeEvent as unknown as {
+            touches?: ArrayLike<{ clientX: number; clientY: number }>;
+            changedTouches?: ArrayLike<{ clientX: number; clientY: number }>;
+          };
           
           let clientX = e.clientX;
           let clientY = e.clientY;
           
-          if ('touches' in native && native.touches.length > 0) {
+          if (native.touches && native.touches.length > 0) {
             clientX = native.touches[0].clientX;
             clientY = native.touches[0].clientY;
-          } else if ('changedTouches' in native && native.changedTouches.length > 0) {
+          } else if (native.changedTouches && native.changedTouches.length > 0) {
             clientX = native.changedTouches[0].clientX;
             clientY = native.changedTouches[0].clientY;
           }
@@ -552,15 +555,18 @@ export default function FolderCard({
       onClick={(e) => {
         if (!cardRef.current) return;
         const rect = cardRef.current.getBoundingClientRect();
-        const native = e.nativeEvent as any;
+        const native = e.nativeEvent as unknown as {
+          touches?: ArrayLike<{ clientX: number; clientY: number }>;
+          changedTouches?: ArrayLike<{ clientX: number; clientY: number }>;
+        };
         
         let clientX = e.clientX;
         let clientY = e.clientY;
         
-        if ('touches' in native && native.touches.length > 0) {
+        if (native.touches && native.touches.length > 0) {
           clientX = native.touches[0].clientX;
           clientY = native.touches[0].clientY;
-        } else if ('changedTouches' in native && native.changedTouches.length > 0) {
+        } else if (native.changedTouches && native.changedTouches.length > 0) {
           clientX = native.changedTouches[0].clientX;
           clientY = native.changedTouches[0].clientY;
         }
