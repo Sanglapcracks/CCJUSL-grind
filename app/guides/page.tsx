@@ -409,7 +409,7 @@ export default function GuidesPage() {
                 initial="hidden"
                 animate="visible"
                 exit="exit"
-                className="grid gap-6 gap-y-16 lg:gap-y-20 sm:grid-cols-2 lg:grid-cols-3"
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 gap-y-16 lg:gap-y-20 w-full"
               >
                 {filteredCompanyGuides.length > 0 ? (
                   filteredCompanyGuides.map((guide) => {
@@ -452,7 +452,7 @@ export default function GuidesPage() {
                 initial="hidden"
                 animate="visible"
                 exit="exit"
-                className="grid gap-6 gap-y-16 lg:gap-y-20 sm:grid-cols-2 lg:grid-cols-3"
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 gap-y-16 lg:gap-y-20 w-full"
               >
                 {companyGuidesForSelectedBatch.map((guide) => {
                   const meta = companyMetadata[guide.company] || defaultMeta;
@@ -484,7 +484,7 @@ export default function GuidesPage() {
                 exit="exit"
                 className="flex justify-center"
               >
-                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 w-full justify-center">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full justify-center">
                   {batches.map((batch) => {
                     const customMeta = {
                       ...batchMeta,
