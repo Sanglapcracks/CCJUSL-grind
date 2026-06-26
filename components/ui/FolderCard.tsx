@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useRef, useState } from "react";
-import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import React, { useRef, useState, useEffect } from "react";
+import { motion, useMotionValue, useSpring, useTransform, animate } from "framer-motion";
 import { Building, FileText, Download, Users, ArrowRight } from "lucide-react";
 import Magnet from "./Magnet";
 
@@ -154,6 +154,50 @@ export default function FolderCard({
 
   const [isHovered, setIsHovered] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isTouch, setIsTouch] = useState(false);
+  const [isActive, setIsActive] = useState(false);
+
+  useEffect(() => {
+    setIsTouch(window.matchMedia("(pointer: coarse)").matches);
+
+    const handleClose = (e: Event) => {
+      const customEvent = e as CustomEvent;
+      if (customEvent.detail !== cardRef.current) {
+        setIsActive(false);
+      }
+    };
+
+    document.addEventListener("close-folder-cards", handleClose);
+    return () => {
+      document.removeEventListener("close-folder-cards", handleClose);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!isTouch || isActive) return;
+
+    // Gentle auto-sway animation for touch devices when not active to demonstrate 3D layer depth
+    const controlsX = animate(x, [0.5, 0.35, 0.65, 0.5], {
+      duration: 6,
+      repeat: Infinity,
+      ease: "easeInOut",
+    });
+
+    const controlsY = animate(y, [0.5, 0.58, 0.42, 0.5], {
+      duration: 6,
+      repeat: Infinity,
+      ease: "easeInOut",
+    });
+
+    return () => {
+      controlsX.stop();
+      controlsY.stop();
+      x.set(0.5);
+      y.set(0.5);
+    };
+  }, [isTouch, isActive, x, y]);
+
+  const showHoverState = isTouch ? isActive : isHovered;
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
@@ -209,7 +253,7 @@ export default function FolderCard({
         animate={
           isSplitting
             ? { scale: 0.5, opacity: 0 }
-            : { scale: isHovered ? 0.92 : 0.82, opacity: isHovered ? 0.65 : 0.35 }
+            : { scale: showHoverState ? 0.92 : 0.82, opacity: showHoverState ? 0.65 : 0.35 }
         }
         style={{
           z: -20,
@@ -224,7 +268,7 @@ export default function FolderCard({
         animate={
           isSplitting
             ? { x: -450, rotate: -20, rotateY: -45, scale: 0.7, opacity: 0, z: 0 }
-            : { x: 0, rotate: 0, rotateY: 0, scale: 1, opacity: 1, z: isHovered ? 15 : 0 }
+            : { x: 0, rotate: 0, rotateY: 0, scale: 1, opacity: 1, z: showHoverState ? 15 : 0 }
         }
         transition={
           isSplitting
@@ -233,9 +277,9 @@ export default function FolderCard({
         }
         className={`absolute bottom-0 left-0 w-full rounded-2xl bg-neutral-950 border transition-colors duration-500 z-0 ${
           isParent ? "h-[295px]" : "h-[245px]"
-        } ${isHovered ? brand.borderHover : brand.border}`}
+        } ${showHoverState ? brand.borderHover : brand.border}`}
         style={{
-          boxShadow: isHovered
+          boxShadow: showHoverState
             ? `0 25px 60px -12px ${brand.glowHover}, 0 10px 25px -10px rgba(0,0,0,0.8)`
             : `0 12px 35px -10px ${brand.glowDefault}, 0 8px 20px -8px rgba(0,0,0,0.7)`,
         }}
@@ -244,9 +288,9 @@ export default function FolderCard({
         <div
           className={`absolute left-[16px] px-4 bg-neutral-950 border-t border-x rounded-t-xl flex items-center gap-2 transition-colors duration-500 ${
             isParent ? "-top-[24px] h-[24px]" : "-top-[22px] h-[22px]"
-          } ${isHovered ? brand.borderHover : brand.border}`}
+          } ${showHoverState ? brand.borderHover : brand.border}`}
         >
-          <Building size={13} className={`transition-colors duration-500 ${isHovered ? brand.text : "text-neutral-500"}`} />
+          <Building size={13} className={`transition-colors duration-500 ${showHoverState ? brand.text : "text-neutral-500"}`} />
           <span className="text-[10px] font-mono font-medium uppercase tracking-[0.2em] text-neutral-300 truncate max-w-[180px] sm:max-w-none">
             {company}
           </span>
@@ -259,10 +303,10 @@ export default function FolderCard({
           isSplitting
             ? { y: -180, scale: 1.3, rotate: 5, opacity: 0, z: 20 }
             : {
-                y: isHovered ? (isParent ? -45 : -30) : (isParent ? 50 : 42),
-                scale: isHovered ? 1.02 : 0.96,
+                y: showHoverState ? (isParent ? -45 : -30) : (isParent ? 50 : 42),
+                scale: showHoverState ? 1.02 : 0.96,
                 opacity: 1,
-                z: isHovered ? 45 : 20
+                z: showHoverState ? 45 : 20
               }
         }
         transition={
@@ -315,7 +359,7 @@ export default function FolderCard({
 
           <Magnet className="w-full" magnetStrength={0.1}>
             <div
-              className={`flex w-full items-center justify-center gap-2 rounded-lg border py-2 text-[11px] font-mono font-medium uppercase tracking-[0.12em] text-white transition-all duration-300 backdrop-blur-sm ${brand.borderBtn} ${brand.bgBtn} hover:shadow-[0_0_20px_rgba(255,255,255,0.1)]`}
+              className={`action-button-trigger flex w-full items-center justify-center gap-2 rounded-lg border py-2 text-[11px] font-mono font-medium uppercase tracking-[0.12em] text-white transition-all duration-300 backdrop-blur-sm ${brand.borderBtn} ${brand.bgBtn} hover:shadow-[0_0_20px_rgba(255,255,255,0.1)]`}
             >
               {onClick ? (
                 <>
@@ -339,14 +383,14 @@ export default function FolderCard({
           isSplitting
             ? { x: 450, rotate: 20, rotateY: 45, scale: 0.7, opacity: 0, z: 40 }
             : {
-                rotateX: isHovered ? -24 : -6,
-                y: isHovered ? 10 : 0,
+                rotateX: showHoverState ? -24 : -6,
+                y: showHoverState ? 10 : 0,
                 x: 0,
                 rotate: 0,
                 rotateY: 0,
                 scale: 1,
                 opacity: 1,
-                z: isHovered ? 75 : 40
+                z: showHoverState ? 75 : 40
               }
         }
         transition={
@@ -357,19 +401,19 @@ export default function FolderCard({
         style={{
           transformStyle: "preserve-3d",
           transformOrigin: "bottom center",
-          boxShadow: isHovered
+          boxShadow: showHoverState
             ? "0 -10px 30px -10px rgba(0,0,0,0.9), inset 0 1px 0 rgba(255,255,255,0.2)"
             : "0 -5px 15px -8px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.1)",
         }}
         className={`absolute bottom-0 left-0 w-full rounded-2xl bg-gradient-to-br from-neutral-900 to-[#101010] border border-t-white/20 p-4 flex flex-col justify-between overflow-hidden z-20 transition-colors duration-500 ${
           isParent ? "h-[295px]" : "h-[245px]"
-        } ${isHovered ? brand.borderHover : brand.border}`}
+        } ${showHoverState ? brand.borderHover : brand.border}`}
       >
         {/* Spotlight Cursor */}
         <div
           className="pointer-events-none absolute inset-0 z-0 transition-opacity duration-500 ease-out"
           style={{
-            opacity: isHovered ? 1 : 0,
+            opacity: showHoverState ? 1 : 0,
             background: `radial-gradient(400px circle at ${position.x}px ${position.y}px, ${brand.glowHover}, transparent 80%)`,
           }}
         />
@@ -383,7 +427,7 @@ export default function FolderCard({
             z: -10,
           }}
           className={`absolute bottom-2 right-4 text-[55px] sm:text-[75px] font-display font-black select-none pointer-events-none transition-all duration-500 ease-out leading-none z-0 ${
-            isHovered ? "opacity-25 scale-110" : "opacity-12"
+            showHoverState ? "opacity-25 scale-110" : "opacity-12"
           }`}
         >
           {meta.initial}
@@ -398,7 +442,7 @@ export default function FolderCard({
             y: coverContentY,
           }}
           animate={{
-            z: isHovered ? 25 : 10,
+            z: showHoverState ? 25 : 10,
           }}
         >
           <div className="flex justify-between items-start w-full">
@@ -417,7 +461,7 @@ export default function FolderCard({
 
           <div 
             className="flex flex-col justify-center flex-1 mt-3 border-l-2 pl-3 transition-all duration-500"
-            style={{ borderLeftColor: isHovered ? brand.colorHex : "rgba(255, 255, 255, 0.15)" }}
+            style={{ borderLeftColor: showHoverState ? brand.colorHex : "rgba(255, 255, 255, 0.15)" }}
           >
             <p className={`font-body text-white/95 leading-relaxed font-medium pr-2 ${
               isParent ? "text-xs sm:text-[13px]" : "text-[11px] sm:text-[12px]"
@@ -442,7 +486,26 @@ export default function FolderCard({
   if (onClick) {
     return (
       <button
-        onClick={onClick}
+        onClick={(e) => {
+          if (isTouch) {
+            const target = e.target as HTMLElement;
+            const isActionButton = target.closest(".action-button-trigger");
+            if (!isActive) {
+              e.preventDefault();
+              e.stopPropagation();
+              setIsActive(true);
+              document.dispatchEvent(new CustomEvent("close-folder-cards", { detail: cardRef.current }));
+            } else if (!isActionButton) {
+              e.preventDefault();
+              e.stopPropagation();
+              setIsActive(false);
+            } else {
+              onClick();
+            }
+          } else {
+            onClick();
+          }
+        }}
         type="button"
         className={`block relative mt-8 pt-1 group w-full max-w-[340px] mx-auto outline-none text-left ${
           isParent ? "h-[370px]" : "h-[310px]"
@@ -462,6 +525,22 @@ export default function FolderCard({
       href={pdfPath}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={(e) => {
+        if (isTouch) {
+          const target = e.target as HTMLElement;
+          const isActionButton = target.closest(".action-button-trigger");
+          if (!isActive) {
+            e.preventDefault();
+            e.stopPropagation();
+            setIsActive(true);
+            document.dispatchEvent(new CustomEvent("close-folder-cards", { detail: cardRef.current }));
+          } else if (!isActionButton) {
+            e.preventDefault();
+            e.stopPropagation();
+            setIsActive(false);
+          }
+        }
+      }}
       className={`block relative mt-8 pt-1 group w-full max-w-[340px] mx-auto outline-none ${
         isParent ? "h-[370px]" : "h-[310px]"
       }`}
