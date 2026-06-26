@@ -324,5 +324,49 @@ export const interviewGuides: InterviewGuide[] = [
     "prepTips": "Of course you’ll need to maintain a CGPA above 7.5 - having a higher CGPA is a plus factor in my opinion. \nFrom IT, I think everyone who got selected had a CGPA > 8.5. Try to keep it as high as you can while \nsimultaneously building skills outside of your curriculum (if you’re from IT, aim to score high in the first year, gets \nharder 3rd semester onwards). \n\n1. OA - Practice DSA. Everyone got different questions, but I don’t think they were too hard. Some people got \nquestions on DP and Graph too, but they were not too difficult. Practice a bit of aptitude (Venn \nDiagram/Cardinality of 3 Overlapping Sets Formula, Data Interpretation). Having a general idea of stocks and/or \ntrading may be helpful - but I think you could deduce the answers logically too if you didn’t have prior knowledge. \nLearning to read a Candlestick chart may also be helpful (just how is opening, closing, max, min price denoted). \nEnglish was general knowledge based in my opinion - don’t think preparing specifically for this would be fruitful. \nIf you really want an edge maybe read English stories/newspapers regularly. \n2. Technical Interviews - For me this was largely based on projects so if you’re a dev person make sure you can \nexplain your projects well (what does it achieve, how does it do so). Know basic DSA - Arrays, Sorting, Linked \nList, etc. If you’re more of a DSA person than dev, they may focus a bit more on DSA - Graphs, DP, etc (nothing \ntoo hard I think). Core CS is a must in my opinion - OOPs (Java in my case), DBMS and CN. I didn’t get very \nhard questions but at least know the basics. \n3. HR Interview - In our case, this was not eliminatory, so just don’t mess it up massively. Prepare generic HR \nquestions - why Wells Fargo, why should we hire you. Apart from this it was mostly conversational - he asked \nme about my family, whether I was open to relocating to Bangalore/Hyderabad etc. \nTry not to stress too much, believe in yourself. All the best!",
     "additionalNotes": "In general, practice a bit of quantitative aptitude too, apart from the essentials - DSA and Core CS. Also, believe \nin yourself - it can get extremely disheartening in the beginning when you see others getting selected while you \ndon't. There is definitely a luck factor, all you can do is what's in your control - work hard to increase your \nchances, and then you just need to get lucky on 1-2 days.",
     "selected": true
+  },
+  {
+    "id": "d.e.-shaw-debabrata-mondal-25",
+    "candidateName": "Debabrata Mondal",
+    "department": "Information Technology",
+    "yearOfGrad": 2025,
+    "company": "D.E. Shaw",
+    "pdfPath": "/guides/25 Batch Interview Experiences/D. E. Shaw interview experience 25.pdf",
+    "experience": "Role: Systems Intern\nOnline Assessment:\nGiven an integer and two arrays A (A1, ..., An) and B (B1, B2, ..., Bn) you are allowed to perform the following two operations on it:\n1. Choose an index i in the array and assign Ai = Ai + Bi.\n2. Delete one element from either the beginning or the end of both the arrays simultaneously.\nYou are only allowed to perform operation (1) a maximum of number of times. Determine the maximum possible sum of array A after performing any number of operations in total.\n=> Kadane’s algorithm for finding the maximum subarray sum is helpful for solving this.\n\nThe MCQs mostly cover CS fundamentals (DBMS and OS topics are important).\n\nTechnical Interview 1:\nInitially, we began discussing my solution to the OA DSA question. The interviewers then went through my resume as well as my GitHub account and asked questions from there. I had a project that used Redis...",
+    "prepTips": "Strong preparation in Core CS Fundamentals (DBMS, OS) and project-specific knowledge is required.",
+    "selected": true
+  },
+  {
+    "id": "placement-gyan-25",
+    "candidateName": "JUSL Alumni",
+    "department": "Information Technology",
+    "yearOfGrad": 2025,
+    "company": "Placement Gyan",
+    "pdfPath": "/guides/25 Batch Interview Experiences/gyan.pdf",
+    "experience": "General Placement & OA Structure Tips:\n1. OA (Day 1):\n   - DSA: mathematical observation (20 mins)\n   - Aptitude: MCQ (10 questions)\n   - Systems MCQs: OS, Networks, OOP, DBMS (15 questions)\n\n2. Technical Interviews (2 rounds):\n   - Introduction and programming background.\n   - Project discussions on CV (language choices, technology stack).\n   - In-depth questions about tools and languages used (Python GIL/CPython internals, Rust ownership/borrowing, git, bash, powershell).\n   - General CS Fundamentals (boot process, web requests lifecycle/DNS/networking).",
+    "prepTips": "Focus on core CS fundamentals (OS, Networks, DBMS, OOP) and be extremely thorough with every item listed on your CV.",
+    "selected": true
+  },
+  {
+    "id": "google-compiled-26",
+    "candidateName": "Sumit De, Debapriya Ghosh, Irfan Habeeb, Soumyadipto Pal",
+    "department": "Computer Science & Engineering",
+    "yearOfGrad": 2026,
+    "company": "Google",
+    "pdfPath": "/guides/26 Batch Interview Experiences/INTERVIEW EXPERIENCES 26.pdf",
+    "experience": "Compiled interview experiences across companies for the 26 Batch, featuring details for Google technical and HR rounds shared by contributors Sumit De, Debapriya Ghosh, Irfan Habeeb Gazi, Soumyadipto Pal, Brahmajit Ray, Sristi Dakua, Deepchika Bhutia, Vivek Halder, Syamantak Sengupta, Arif Rahman, Swastik Chatterjee, and Subhadeep Dey.",
+    "prepTips": "Thoroughly practice problem-solving across core topics (Graphs, Trees, DSU, DP, Recursion) and focus on verbal communication of your thought process during dry runs.",
+    "selected": true
+  },
+  {
+    "id": "d.e.-shaw-compiled-26",
+    "candidateName": "Somyal Sinha, Atmik Goswami, Satwik Biswas",
+    "department": "Computer Science & Engineering",
+    "yearOfGrad": 2026,
+    "company": "D.E. Shaw",
+    "pdfPath": "/guides/26 Batch Interview Experiences/INTERVIEW EXPERIENCES 26.pdf",
+    "experience": "Compiled interview experiences across companies for the 26 Batch, featuring details for D.E. Shaw technical and HR rounds shared by contributors Somyal Sinha, Atmik Goswami, and Satwik Biswas.",
+    "prepTips": "Prepare core systems concepts, database design, computer networks, and DSA topics. Be ready to explain your coding solutions and complexity analysis in detail.",
+    "selected": true
   }
 ];

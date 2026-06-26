@@ -210,7 +210,7 @@ export default function GuidesPage() {
         ...b,
         companiesCount: uniqueCompanies.size,
       };
-    });
+    }).sort((a, b) => b.year - a.year);
   }, []);
 
   const selectedBatchData = useMemo(() => {

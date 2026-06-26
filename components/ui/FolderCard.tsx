@@ -167,9 +167,17 @@ export default function FolderCard({
       }
     };
 
+    const handleDocumentClick = (e: MouseEvent) => {
+      if (cardRef.current && !cardRef.current.contains(e.target as Node)) {
+        setIsActive(false);
+      }
+    };
+
     document.addEventListener("close-folder-cards", handleClose);
+    document.addEventListener("click", handleDocumentClick);
     return () => {
       document.removeEventListener("close-folder-cards", handleClose);
+      document.removeEventListener("click", handleDocumentClick);
     };
   }, []);
 
@@ -197,7 +205,7 @@ export default function FolderCard({
     };
   }, [isTouch, isActive, x, y]);
 
-  const showHoverState = isTouch ? isActive : isHovered;
+  const showHoverState = isActive || isHovered;
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
@@ -487,21 +495,24 @@ export default function FolderCard({
     return (
       <button
         onClick={(e) => {
-          if (isTouch) {
-            const target = e.target as HTMLElement;
-            const isActionButton = target.closest(".action-button-trigger");
-            if (!isActive) {
-              e.preventDefault();
-              e.stopPropagation();
-              setIsActive(true);
-              document.dispatchEvent(new CustomEvent("close-folder-cards", { detail: cardRef.current }));
-            } else if (!isActionButton) {
-              e.preventDefault();
-              e.stopPropagation();
-              setIsActive(false);
-            } else {
-              onClick();
-            }
+          if (!cardRef.current) return;
+          const rect = cardRef.current.getBoundingClientRect();
+          const isKeyboard = e.clientX === 0 && e.clientY === 0;
+          const clickX = isKeyboard ? 0.5 : (e.clientX - rect.left) / rect.width;
+          const clickY = isKeyboard ? 0.5 : (e.clientY - rect.top) / rect.height;
+          
+          x.set(clickX);
+          y.set(clickY);
+          setPosition({
+            x: isKeyboard ? rect.width / 2 : e.clientX - rect.left,
+            y: isKeyboard ? rect.height / 2 : e.clientY - rect.top,
+          });
+
+          if (!isActive) {
+            e.preventDefault();
+            e.stopPropagation();
+            setIsActive(true);
+            document.dispatchEvent(new CustomEvent("close-folder-cards", { detail: cardRef.current }));
           } else {
             onClick();
           }
@@ -526,19 +537,26 @@ export default function FolderCard({
       target="_blank"
       rel="noopener noreferrer"
       onClick={(e) => {
-        if (isTouch) {
-          const target = e.target as HTMLElement;
-          const isActionButton = target.closest(".action-button-trigger");
-          if (!isActive) {
-            e.preventDefault();
-            e.stopPropagation();
-            setIsActive(true);
-            document.dispatchEvent(new CustomEvent("close-folder-cards", { detail: cardRef.current }));
-          } else if (!isActionButton) {
-            e.preventDefault();
-            e.stopPropagation();
-            setIsActive(false);
-          }
+        if (!cardRef.current) return;
+        const rect = cardRef.current.getBoundingClientRect();
+        const isKeyboard = e.clientX === 0 && e.clientY === 0;
+        const clickX = isKeyboard ? 0.5 : (e.clientX - rect.left) / rect.width;
+        const clickY = isKeyboard ? 0.5 : (e.clientY - rect.top) / rect.height;
+        
+        x.set(clickX);
+        y.set(clickY);
+        setPosition({
+          x: isKeyboard ? rect.width / 2 : e.clientX - rect.left,
+          y: isKeyboard ? rect.height / 2 : e.clientY - rect.top,
+        });
+
+        if (!isActive) {
+          e.preventDefault();
+          e.stopPropagation();
+          setIsActive(true);
+          document.dispatchEvent(new CustomEvent("close-folder-cards", { detail: cardRef.current }));
+        } else {
+          // Second click opens the PDF guide
         }
       }}
       className={`block relative mt-8 pt-1 group w-full max-w-[340px] mx-auto outline-none ${
