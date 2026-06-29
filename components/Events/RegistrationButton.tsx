@@ -1,7 +1,7 @@
 import { getAuthStatus } from "@/services/AuthService";
 import { getRegistrationStatus } from "@/services/EventsService";
 import { RegistrationStatus } from "@/types/events";
-import { AlertCircle } from "lucide-react";
+import { events } from "@/data/events"; // 1. Import the local events array
 import Link from "next/link";
 import React from "react";
 
@@ -12,6 +12,12 @@ async function RegistrationButton({
   registrationOpen: boolean;
   slug: string;
 }) {
+  // 2. Find the current event locally by its slug
+  const localEvent = events.find((e) => e.slug === slug);
+
+  // 3. FORCE it to vanish if the local event status is "Closed"
+  if (localEvent?.status === "Closed") return null;
+
   const user = await getAuthStatus();
   const registrationStatus = user
     ? (await getRegistrationStatus(user.id, slug)).status
@@ -19,10 +25,12 @@ async function RegistrationButton({
 
   if (registrationStatus !== RegistrationStatus.NOT_REGISTERED)
     return (
-      <Link href={`/eventRegistration/${slug}`} className="border border-red-400 px-6 py-3 text-xl text-red-400">Registration Details</Link>
+      <Link href={`/eventRegistration/${slug}`} className="border border-red-400 px-6 py-3 text-xl text-red-400">
+        Registration Details
+      </Link>
     );
 
-  // Only render the Register button if registrations are explicitly open
+  // Fallback check
   if (!registrationOpen) return null;
 
   return (
