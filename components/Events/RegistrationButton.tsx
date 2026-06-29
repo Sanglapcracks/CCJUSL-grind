@@ -22,22 +22,16 @@ async function RegistrationButton({
       <Link href={`/eventRegistration/${slug}`} className="border border-red-400 px-6 py-3 text-xl text-red-400">Registration Details</Link>
     );
 
+  // Only render the Register button if registrations are explicitly open
+  if (!registrationOpen) return null;
+
   return (
-    <>
-      {registrationOpen ? (
-        <Link
-          href={`/eventRegistration/${slug}`}
-          className="border border-red-400 px-6 py-3 text-xl text-red-400 lg:text-2xl 2xl:text-3xl"
-        >
-          Register
-        </Link>
-      ) : (
-        <div className="inline-flex items-center border border-red-400/30 px-6 py-3 text-sm tracking-wide text-red-400">
-          <AlertCircle className="mr-2 h-4 w-4" />
-          REGISTRATION CLOSED
-        </div>
-      )}
-    </>
+    <Link
+      href={`/eventRegistration/${slug}`}
+      className="border border-red-400 px-6 py-3 text-xl text-red-400 lg:text-2xl 2xl:text-3xl"
+    >
+      Register
+    </Link>
   );
 }
 
